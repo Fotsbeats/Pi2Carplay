@@ -1,0 +1,13 @@
+/release/
+/build/
+*.img
+*.img.gz
+*.img.xz
+*.p12
+*.jks
+*.keystore
+*.key
+*.pem
+__pycache__/
+*.pyc
+.DS_Store

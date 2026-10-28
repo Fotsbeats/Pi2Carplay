@@ -1,0 +1,16 @@
+--- a/gbm_mesa_driver/gbm_mesa_internals.cpp
++++ b/gbm_mesa_driver/gbm_mesa_internals.cpp
+@@ -325,6 +325,13 @@
+ 			auto wr = drv->wrapper;
+ 			wr->free(gbm_bo);
+ 		}
++		// Multiple planes can share one exported descriptor; retain exactly one owner.
++		for (size_t i = 0; i < DRV_MAX_PLANES; ++i) {
++			if (!fds[i]) continue;
++			for (size_t j = i + 1; j < DRV_MAX_PLANES; ++j) {
++				if (fds[j].Get() == fds[i].Get()) (void)fds[j].Release();
++			}
++		}
+ 	}
+ 
+ 	std::shared_ptr<GbmMesaDriver> drv;

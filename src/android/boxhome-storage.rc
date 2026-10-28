@@ -1,0 +1,7 @@
+# Bound SD writeback and prioritize interactive reads before Android apps start.
+on post-fs-data
+    write /sys/block/mmcblk0/queue/scheduler bfq
+    write /sys/block/mmcblk0/queue/iosched/low_latency 1
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /proc/sys/vm/dirty_background_bytes 8388608
+    write /proc/sys/vm/dirty_bytes 33554432

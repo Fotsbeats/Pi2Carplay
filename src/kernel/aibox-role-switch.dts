@@ -1,0 +1,14 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2712";
+    fragment@0 {
+        target-path = "/axi/usb@480000";
+        __overlay__ {
+            dr_mode = "otg";
+            usb-role-switch;
+            role-switch-default-mode = "peripheral";
+        };
+    };
+};

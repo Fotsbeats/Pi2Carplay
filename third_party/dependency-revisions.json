@@ -1,0 +1,10 @@
+{
+  "x264": {
+    "commit": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
+    "source": "https://code.videolan.org/videolan/x264.git"
+  },
+  "libyuv": {
+    "commit": "2e65a61dffeb6ab9dd5dd363ccede11770957b73",
+    "source": "https://chromium.googlesource.com/libyuv/libyuv"
+  }
+}

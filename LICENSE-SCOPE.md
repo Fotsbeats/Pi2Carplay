@@ -1,0 +1,7 @@
+# License scope
+
+Project-authored source in src/ and scripts/ is offered under GPL-2.0-or-later, except files with their own upstream license headers. Linux kernel code remains under its original GPL-2.0-only/individual-file terms. Retain all upstream copyright and license notices.
+
+The LICENSE file does not relicense Android, Raspberry Pi firmware, Google apps, third-party application APKs, protocol SDK shared libraries, app artwork or trademarks. Those remain separate components under their own terms. The ARM32 protocol SDK is currently a binary dependency; its implementation source is not in this repository. Publishing our adapter and capture/launcher sources does not make that SDK or the complete Android image fully open source. Distribution review is still pending before any public upload.
+
+The Android base is [KonstaKANG AOSP16 for Raspberry Pi 5, 2026-04-28](https://konstakang.com/devices/rpi5/AOSP16/), based on Raspberry Vanilla. Its author states that the build contains components under CC BY-NC-SA 4.0, permits personal/educational use, disallows commercial use without separate permission, and asks that original builds not be mirrored. This project does not grant commercial rights to those components. Preserve upstream attribution and applicable ShareAlike requirements. The private modified image is staged for testing; permission and source obligations must be reviewed before public image distribution.

@@ -1,0 +1,9 @@
+on boot
+    start opencarplay-recovery
+
+service opencarplay-recovery /system/bin/sh /system/bin/opencarplay-recovery.sh
+    disabled
+    oneshot
+    user root
+    group root system shell
+    seclabel u:r:su:s0

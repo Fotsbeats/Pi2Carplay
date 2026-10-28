@@ -1,0 +1,12 @@
+on property:sys.boxhome.apps.pending=1 && property:sys.boot_completed=1
+    start boxhome-app-policy
+
+on property:init.svc.boxhome-app-policy=stopped && property:sys.boxhome.apps.pending=1
+    start boxhome-app-policy
+
+service boxhome-app-policy /system/bin/sh /system/bin/boxhome-app-policy.sh --pending
+    disabled
+    oneshot
+    user root
+    group root system
+    seclabel u:r:su:s0

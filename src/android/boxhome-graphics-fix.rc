@@ -1,0 +1,10 @@
+# Root post-fs-data activates APEX modules before this action and before HAL startup.
+on post-fs-data
+    exec_start boxhome-graphics-fix
+
+service boxhome-graphics-fix /system/bin/sh /system/bin/boxhome-graphics-fix.sh
+    disabled
+    oneshot
+    user root
+    group root
+    seclabel u:r:su:s0

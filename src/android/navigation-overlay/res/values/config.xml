@@ -1,0 +1,4 @@
+<resources>
+<bool name="config_showNavigationBar">false</bool>
+<dimen name="status_bar_height_default">0dp</dimen>
+</resources>

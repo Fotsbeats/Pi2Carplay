@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "upstream_source_files": 87959,
+  "modified_files": {
+    "drivers/usb/dwc2/drd.c": "b1a796403a31505016e166fc1971f935ba7d8537860e7c5c14d982fcdcffafb3",
+    "drivers/usb/gadget/function/f_hid.c": "40ed581927155aa1d8282fc93394689f2f2bb80242e369e545a37b2d9ce53620",
+    "drivers/gpu/drm/vc4/vc4_plane.c": "effe3d8d4bd964be305afa0b6b8419200711ba92886cc72109cff76d11140a43"
+  },
+  "added_build_inputs": 14,
+  "all_patches_verified": true,
+  "source_only_no_device_data": true,
+  "kernel_rebuilt": false,
+  "import_archive_sha256": "d63b5641b23a15b89858197660e095326f2581144f5294332e096fd65148cfda",
+  "source_branch": "main",
+  "source_path": "src/kernel/linux",
+  "source_import_commit": "4e4fa2964cdafa4514714318b918743bdc8d823c",
+  "imported_files": 88022
+}

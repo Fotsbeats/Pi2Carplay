@@ -20,7 +20,7 @@ Read README.md, LICENSE-SCOPE.md, third_party/, src/kernel/README.md and src/bri
 
 When porting Android, retain the working bridge runtime and change Android-facing interfaces first. Do not replace the SDK or rewrite authentication to solve a launcher, codec or audio-routing problem.
 
-Preserve USB descriptors/identities, iAP2 HID transport, gated enumeration and control-triggered host/device role changes. Keep the kernel, modules, device tree and vendor startup scripts matched. A generic replacement kernel is not equivalent. The release kernel-source archive includes the pinned upstream tree, four applied patches, configuration and external module sources. The recovered final role-switch patch is included; a bit-for-bit rebuild has not been repeated.
+Preserve USB descriptors/identities, iAP2 HID transport, gated enumeration and control-triggered host/device role changes. Keep the kernel, modules, device tree and vendor startup scripts matched. A generic replacement kernel is not equivalent. The complete kernel source is on main under src/kernel/linux, with four patches already applied; configuration and external module sources live alongside it. The recovered final role-switch patch is included; a bit-for-bit rebuild has not been repeated.
 
 The protocol uses ARM32 Bionic libraries and its own linker. Android capture/audio processes are ARM64. Clear private LD_PRELOAD and LD_LIBRARY_PATH before starting Android child processes. Retain the USB network interface and IPv6 routing; use negotiated service ports.
 
@@ -48,4 +48,4 @@ Save exact program/configuration hashes and a small rollback set before a live t
 
 Create release userdata from scratch with a program-only allowlist. Never export accounts, passwords, network/Bluetooth profiles, app/browser data, device identifiers, ADB authorizations, logs, screenshots or private signing material. Use your own signing key outside Git. Keep ADB authentication enabled and bundle no authorized host keys. Audit source and image; verify partition hashes and fully decompress/check the release archive before upload.
 
-Respect component licenses, including the Android base's non-commercial components. Preserve the corresponding kernel-source asset and review component redistribution scope before making a private staging repo public. Keep public copy short, generic and free of personal test-vehicle details.
+Respect component licenses, including the Android base's non-commercial components. Preserve the corresponding kernel source on main and review component redistribution scope before making a private staging repo public. Keep public copy short, generic and free of personal test-vehicle details.

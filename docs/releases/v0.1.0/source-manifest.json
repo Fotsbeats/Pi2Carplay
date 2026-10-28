@@ -1,0 +1,566 @@
+{
+  "complete": true,
+  "source_commit": "2bc4cac5ee02f09db90ca71128fb8cc37cf27bd3",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 57,
+      "sha256": "50af798128a952a66155b125d7d4c8b96b2b12c55e62a027337076925b8052aa"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 106,
+      "sha256": "b4d9996c0ac35709cfff49bf21880ac93bccae9b4520d2d1b22e82e91addbf5c"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 6250,
+      "sha256": "7a889adbb24e4a8f5616d85dcc41e4ce409c106ad2ccaf680c9d97a7e26f4961"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 17992,
+      "sha256": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670"
+    },
+    {
+      "path": "LICENSE-SCOPE.md",
+      "bytes": 1435,
+      "sha256": "34db6da2c6bd79cb1ed6a34262feebe760dd97adee3a0cedd80b71f4d99d4341"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2927,
+      "sha256": "d2c7c1a2a66fb9a72adc14db045c16678ef40fff1795a66fc173d11eabce2f33"
+    },
+    {
+      "path": "assets/Pi2CarplayBanner.png",
+      "bytes": 1811948,
+      "sha256": "e18ef5816104e10f0345b4d64659f8a0d72ba617e1fd87e7415c6f97b134e9aa"
+    },
+    {
+      "path": "scripts/build_bridge.sh",
+      "bytes": 1240,
+      "sha256": "8e6a55ed2bdc144d3082d993c3ec9e4de3082e0c3ab35169cb3a1088bdb1831e"
+    },
+    {
+      "path": "scripts/build_encoder.sh",
+      "bytes": 1893,
+      "sha256": "08a970ce420fe419a334229f357987d6bed8f2b89b96d02395520741922d8775"
+    },
+    {
+      "path": "scripts/build_java.py",
+      "bytes": 2492,
+      "sha256": "da925717945a1432b69eebee3341cd83c0ea82e3bbdc943202947f0bd513407d"
+    },
+    {
+      "path": "scripts/build_overlays.py",
+      "bytes": 1146,
+      "sha256": "1341b909895e4d245312eb1888bb4d654b97650527579681983a8f822ae1fb8d"
+    },
+    {
+      "path": "scripts/build_sidebar_policy.py",
+      "bytes": 3924,
+      "sha256": "c21bb8fbf06c237cc43e58616202983802e1be3d7265df8292cdaf93405c65e1"
+    },
+    {
+      "path": "scripts/patch_sand_tail.py",
+      "bytes": 1516,
+      "sha256": "2dfaebc246acdf2386797b502f822ada06346cd9a2f53081ca64a38d75805c62"
+    },
+    {
+      "path": "src/android/DexPolicyMerge.java",
+      "bytes": 1593,
+      "sha256": "30f2ab95edc1b82b51b17f93fbc9c7615ff22275d431c06dccdb51b4fc7dcc2d"
+    },
+    {
+      "path": "src/android/box-location-setup.sh",
+      "bytes": 325,
+      "sha256": "27509011d8763928c7e98a3acf13f44d01e7cc846cc2c80b097cfcb5952258c7"
+    },
+    {
+      "path": "src/android/box-location.rc",
+      "bytes": 97,
+      "sha256": "bc2de73503335fd3c62d1c61de2130485a71fbb117f41fe5d969e8007e104bfa"
+    },
+    {
+      "path": "src/android/box-media-fixes.rc",
+      "bytes": 193,
+      "sha256": "1889c93258c15a168036732747daef72e464581c2f96aef68d58d3652aa41a03"
+    },
+    {
+      "path": "src/android/box-media-fixes.sh",
+      "bytes": 776,
+      "sha256": "32d1340bb681ca622d98892b2c3714e6cd78aaa9956551e708d58141c313e939"
+    },
+    {
+      "path": "src/android/boxhome-app-policy.rc",
+      "bytes": 389,
+      "sha256": "54207573a9c38a14212043fb6e287694c214bc9e12f967412e3490e5d1961d33"
+    },
+    {
+      "path": "src/android/boxhome-app-policy.sh",
+      "bytes": 1975,
+      "sha256": "04109fc22485f6faef595544c4084f25343c69a305523aaa274d8bba37aebf94"
+    },
+    {
+      "path": "src/android/boxhome-graphics-fix.rc",
+      "bytes": 296,
+      "sha256": "2a422856a5f7f2818a14a6f2a42ac83d6f1397d7c26402964c9d73cc5867eb29"
+    },
+    {
+      "path": "src/android/boxhome-graphics-fix.sh",
+      "bytes": 746,
+      "sha256": "61770b49d19c077efdec23d0bf5e9c792e7cc3b2ee9b0c73fc7a30ccbc54e6d7"
+    },
+    {
+      "path": "src/android/boxhome-hiddenapi.xml",
+      "bytes": 75,
+      "sha256": "abe3313bebae2796122c0aaa207f00edbbb14e0d6731fd9320c63cd13930ae43"
+    },
+    {
+      "path": "src/android/boxhome-landscape.rc",
+      "bytes": 357,
+      "sha256": "9f7da3150ab8c5ad10343d8ff255d30ab5a9d229fe2f57e6f0e6b3306fa4cda9"
+    },
+    {
+      "path": "src/android/boxhome-landscape.sh",
+      "bytes": 693,
+      "sha256": "83d57c9aee4c708aad824e0506e63e1744bd6f2590d9a16503b20078396d4e30"
+    },
+    {
+      "path": "src/android/boxhome-storage.rc",
+      "bytes": 352,
+      "sha256": "19f1586b1bf70456587f4027de1c7576148166fbb20e36a433834da4f3c95853"
+    },
+    {
+      "path": "src/android/graphics-fix/close-unique-fds.S",
+      "bytes": 456,
+      "sha256": "1803e70f54eb444c3839b5b941ed92d42fc10373ad03ca5b741e9a365a2c1117"
+    },
+    {
+      "path": "src/android/graphics-fix/minigbm-descriptor-ownership.patch",
+      "bytes": 497,
+      "sha256": "eca5e96baa279f2c7e0005974a694656e389259ec3cbc991e459b4d4954cb560"
+    },
+    {
+      "path": "src/android/navigation-overlay/AndroidManifest.xml",
+      "bytes": 343,
+      "sha256": "128af62c7c48d68dafa902b4b9cf2af340f78be491372910c0646ecc89d8bd67"
+    },
+    {
+      "path": "src/android/navigation-overlay/res/values/config.xml",
+      "bytes": 127,
+      "sha256": "2d1a538f26ad2003fd8acf39e7a8b07a315778db6f9102c0c68efd1e7034c449"
+    },
+    {
+      "path": "src/android/opencarplay-firstboot.rc",
+      "bytes": 247,
+      "sha256": "df68cfb83bebc20fc56783192c8b2b914045c6e9b5d096b10a61640f25b5ac05"
+    },
+    {
+      "path": "src/android/opencarplay-firstboot.sh",
+      "bytes": 4712,
+      "sha256": "dcf9beb39c9c138846ea348d92be1230d9bc4a2b6dd0ec3e7c524dbf9dee5ab6"
+    },
+    {
+      "path": "src/android/opencarplay-recovery.rc",
+      "bytes": 210,
+      "sha256": "23e01ea0343a970f888f20b8d9f9f21544e98f88aef5e804632719b72e437756"
+    },
+    {
+      "path": "src/android/opencarplay-recovery.sh",
+      "bytes": 316,
+      "sha256": "04c32462fa7b74eb52c05bd9987c63eff88d44585f8f3e4046a8621615dc59a3"
+    },
+    {
+      "path": "src/android/safety-overlay/AndroidManifest.xml",
+      "bytes": 378,
+      "sha256": "8d68cf7187cd7fb07b87963d116caade12e414d5e652f6ffde62cd3d79b1a338"
+    },
+    {
+      "path": "src/android/safety-overlay/res/raw-v36/safety_center_config.xml",
+      "bytes": 9359,
+      "sha256": "6cd0bca4496e5869e25fdebc69998ee7a24765e755a5bc21a2c52e86bba3174c"
+    },
+    {
+      "path": "src/audio/AudioCapture.java",
+      "bytes": 2376,
+      "sha256": "d826f41127633257dd7722c5749599c92633ab242cf577671897a33b051128a7"
+    },
+    {
+      "path": "src/bridge/DISPLAY-NEGOTIATION.md",
+      "bytes": 2312,
+      "sha256": "791717ce1f8b33f0c1c01173c4a5ef19cc75f2faf02634af7057605282072d00"
+    },
+    {
+      "path": "src/bridge/aibox-handshake.rc",
+      "bytes": 241,
+      "sha256": "b8f22d36c1c758c7f7b6c0b422073455fd263b1ea00b5f781d784e3d4105f074"
+    },
+    {
+      "path": "src/bridge/aibox-handshake.sh",
+      "bytes": 4614,
+      "sha256": "f3689978ee182983be5d80859dd0e4f8f48876540c002ee5b8a1872dafb416f2"
+    },
+    {
+      "path": "src/bridge/annexb.h",
+      "bytes": 359,
+      "sha256": "4701da713cefe1776d7965a3cd392a2e43d42ec1e4648a7e3024d493e430831e"
+    },
+    {
+      "path": "src/bridge/audio.h",
+      "bytes": 2095,
+      "sha256": "c1ed8a363ede4289c8e7dbef7266f5576d5919c2cafa2f79ff0b54b0715ff6d4"
+    },
+    {
+      "path": "src/bridge/display_geometry.h",
+      "bytes": 1508,
+      "sha256": "9b12519d6e8e195ebd5a973c887435a8df3da8cc60583eaff6f690d0a1dfba3e"
+    },
+    {
+      "path": "src/bridge/gps_forward.h",
+      "bytes": 1627,
+      "sha256": "80ad954dc568f18424553bce292db3aa138817a1883c732d3128eb23343749b2"
+    },
+    {
+      "path": "src/bridge/gps_stats.h",
+      "bytes": 1337,
+      "sha256": "d8c69655d360ddef02eb886999544180664974e11f78e24ff4bde4eba12ca099"
+    },
+    {
+      "path": "src/bridge/handshake_probe.c",
+      "bytes": 15663,
+      "sha256": "c1822c1c5a954a322de846fe8a8987f756460e6770bf8b6aa7ee5b1a21e6dade"
+    },
+    {
+      "path": "src/bridge/nmea.h",
+      "bytes": 1630,
+      "sha256": "4d2fd2d8b9b792b7ddb9f390ff34db421e9d365339ba348683665049bd06c1fe"
+    },
+    {
+      "path": "src/bridge/prepare-handshake-usb.sh",
+      "bytes": 3172,
+      "sha256": "5d4c67fb78fb7382f42a5086de33dddfbe8f8558865171db1bbf5840a70bffb5"
+    },
+    {
+      "path": "src/bridge/restore-handshake-usb.sh",
+      "bytes": 1891,
+      "sha256": "0fed6b83767fa5da6a3e0306a2a873d88e98d8ff33382bdbd7d6875c2c8eeacd"
+    },
+    {
+      "path": "src/bridge/test_display_geometry.c",
+      "bytes": 1353,
+      "sha256": "18338a3f276199b8e259b0d91fa5767d7cbf15225cafd6a7a0334f67cad51a3a"
+    },
+    {
+      "path": "src/bridge/test_gps_stats.c",
+      "bytes": 924,
+      "sha256": "a6bde230af6baa847f51c19f2a2b0c2ef4f5e43b54c3077d97b6c373214cf821"
+    },
+    {
+      "path": "src/bridge/test_nmea.c",
+      "bytes": 1443,
+      "sha256": "c346bd2d5efafa68533513a637e725c5062ff14418f12193e2d0df5fe1ed26ae"
+    },
+    {
+      "path": "src/bridge/test_touch.c",
+      "bytes": 2618,
+      "sha256": "dcb352d9425dc253928ea6b6ff569ee467570241891b1690d58b0c164d1e0abf"
+    },
+    {
+      "path": "src/bridge/touch.h",
+      "bytes": 4304,
+      "sha256": "0fbf3fbd2065b410b5c4c3eaafc37d77e13b75e1a1dda3b5f3d8b9c3839a9812"
+    },
+    {
+      "path": "src/capture/DisplayCapture.java",
+      "bytes": 6615,
+      "sha256": "aacf169d0974d465d4a458ed5fc8cf0e851d2fb480b8ef7c60d751a0b10bddcd"
+    },
+    {
+      "path": "src/capture/DisplayGeometry.java",
+      "bytes": 1123,
+      "sha256": "c870e4f33d7807da3499b8af9e5ec4e5bdb657f010e0dd9cb7bda1c7423704e1"
+    },
+    {
+      "path": "src/capture/DisplayGeometryTest.java",
+      "bytes": 884,
+      "sha256": "98eb924b1f8582d79b2177726ad31c4dd1d2cf8eb6af42b59d16952168cae52a"
+    },
+    {
+      "path": "src/capture/EncoderSelfCheck.java",
+      "bytes": 2389,
+      "sha256": "256fc20bb8534070446f3d42a6d8badcc992e5db9bc493cd622cf62b2ad3243a"
+    },
+    {
+      "path": "src/capture/FramePipeline.java",
+      "bytes": 2934,
+      "sha256": "9542fa18fbcf5ef4bb1be3fb75d0eb30e43bcbb78ed39bc0990f267c0a5ae13f"
+    },
+    {
+      "path": "src/capture/FramePipelineTest.java",
+      "bytes": 2016,
+      "sha256": "f6618678d89cb3fc1ed73c3698ba390a8c9dff8b8f4260d864e477907c17df54"
+    },
+    {
+      "path": "src/capture/GpuConversionSelfCheck.java",
+      "bytes": 3455,
+      "sha256": "dcea3f9a6149f2d5d927d7d91f7d9fb9c9f7aa56d4411a6de15c755d612c5479"
+    },
+    {
+      "path": "src/capture/GpuI420.java",
+      "bytes": 7141,
+      "sha256": "01355d5628632af6a6bfffed243a9fa35c286276c82090de77a69f346127c858"
+    },
+    {
+      "path": "src/capture/adaptive_encoder_test.c",
+      "bytes": 1142,
+      "sha256": "2a5fab6eded6d52f4d72b736d48944fd0280fe1f5ea8ec0e3dd54fec38e4a7e6"
+    },
+    {
+      "path": "src/capture/encoder_core.c",
+      "bytes": 5472,
+      "sha256": "9781db441dd83fbe62c2d53e6a89dade3b8e2213eb959407d2a775127363a087"
+    },
+    {
+      "path": "src/capture/encoder_core.h",
+      "bytes": 553,
+      "sha256": "eee66da601a637088bf0b05a2329db686a1a9e6430729ff249b9c22d5b9ab069"
+    },
+    {
+      "path": "src/capture/encoder_jni.c",
+      "bytes": 2846,
+      "sha256": "81069788460ab310ddf44882a889deb25305371b0118bcef36ce520794a5cb55"
+    },
+    {
+      "path": "src/capture/encoder_test.c",
+      "bytes": 856,
+      "sha256": "0c2fac28a66eed35b216e066bb2f60062c27ddd37f8b4b154ca0f5bd250acdbd"
+    },
+    {
+      "path": "src/capture/native_i420_test.c",
+      "bytes": 1033,
+      "sha256": "7f4999b76e79c10c84c113379827934254e2e53cb76636fcea194cb2297b471d"
+    },
+    {
+      "path": "src/capture/thread_probe.c",
+      "bytes": 705,
+      "sha256": "062d540148e3bad68e8600d5ca072c583e2d505b1f7e19f2b97c683b622c2ee5"
+    },
+    {
+      "path": "src/kernel/README.md",
+      "bytes": 2064,
+      "sha256": "07d09fbaf50b4ad42497125402b52bafcfd8a41e42e44a27a4ebd07acb52154f"
+    },
+    {
+      "path": "src/kernel/aibox-role-switch.dts",
+      "bytes": 270,
+      "sha256": "14743e75a147a095870605f017832cfb80727a588c6b95e965efc94d7788fec1"
+    },
+    {
+      "path": "src/kernel/candidate.config",
+      "bytes": 223532,
+      "sha256": "c4721368b5195b51272013316b98343abf879d79f4e354beb90999fbdbe912c9"
+    },
+    {
+      "path": "src/kernel/firmware-manifest.json",
+      "bytes": 1946,
+      "sha256": "74c842b9154fb96e542ea1eb82c3f26552f1581e8298d46140ff4481a48fadb7"
+    },
+    {
+      "path": "src/kernel/fix-vc4.py",
+      "bytes": 492,
+      "sha256": "eac8cd9fea6d21fd9dbcc6d1a891fa4c53781d27239f63ec66603006ea8e9a63"
+    },
+    {
+      "path": "src/kernel/patch-hid-notifications.py",
+      "bytes": 1235,
+      "sha256": "d7a10b9751121bccb52a7131605f563ebc8eb8a84d0fcf2efb1071cb1258e8fc"
+    },
+    {
+      "path": "src/kernel/patch-hid-report-queue.py",
+      "bytes": 3604,
+      "sha256": "3e51d146fdde31ddd3781b3eabc34f079a2986af06812ce08e0688b329167aa1"
+    },
+    {
+      "path": "src/kernel/patch-role-switch.py",
+      "bytes": 490,
+      "sha256": "b5c92191366470dfc252dd7f4f548f0e867060232404200964dfc90007d172a2"
+    },
+    {
+      "path": "src/kernel/usb-adapter/Makefile",
+      "bytes": 21,
+      "sha256": "ce97bea40316fdf91dc6d4172638f921e0650f7fa3f0fc968f92c34c205a0e9c"
+    },
+    {
+      "path": "src/kernel/usb-adapter/aibox_reverse_hid.c",
+      "bytes": 5683,
+      "sha256": "a7a7c852c79d602dfa942d695d058a98fc772ffc7a44b539eca72d672a11a4db"
+    },
+    {
+      "path": "src/kernel/usb-adapter/aibox_usb.c",
+      "bytes": 12679,
+      "sha256": "3dc8c13f3eb48e0a49158a14cc6c01e9740e0dc65fd376f175b9e67be133ed68"
+    },
+    {
+      "path": "src/kernel/usb-adapter/hid_abi_test.c",
+      "bytes": 7394,
+      "sha256": "b471049b406df51507e5dd0c6a1f6e60a1cb7cbc42d74aee38da3d7479961ab6"
+    },
+    {
+      "path": "src/kernel/usb-adapter/hid_trace.c",
+      "bytes": 1881,
+      "sha256": "fe132f95c9a7a54b02a9d603e38cf6a0d43401e4dc113353fb39a9bbd9584592"
+    },
+    {
+      "path": "src/launcher/AndroidManifest.xml",
+      "bytes": 1921,
+      "sha256": "ea32a827ce9bb953b3f165b3c2b87cc33e10b2debe0979d124ece8c88e0de9a9"
+    },
+    {
+      "path": "src/launcher/Backdrop.java",
+      "bytes": 1575,
+      "sha256": "bdf5cf3c81653e5678e75eac4f1c6bfb35ac098240d4133ea40b7eee6e555404"
+    },
+    {
+      "path": "src/launcher/Home.java",
+      "bytes": 31784,
+      "sha256": "718a82f27b34769ab0cdb7284af4540ed04fa4621e0c6e14148096929ec09b19"
+    },
+    {
+      "path": "src/launcher/HomeApps.java",
+      "bytes": 1201,
+      "sha256": "bc0da06930b8d9535afaa3bd870636001899e9736064ff7e6b0643fbc5e50c28"
+    },
+    {
+      "path": "src/launcher/LayoutRules.java",
+      "bytes": 891,
+      "sha256": "b34122e2fb04ee14988c67f714b797d4883b0add970d09e02a393a9c412a33ea"
+    },
+    {
+      "path": "src/launcher/NavigationRail.java",
+      "bytes": 2990,
+      "sha256": "3fcf37a247a9edb0c2b6f4ec2824bc318332f706f8299b321ddf0f846cc9362d"
+    },
+    {
+      "path": "src/launcher/NavigationService.java",
+      "bytes": 8423,
+      "sha256": "02ba86a622a82fe8592b3b4e32fb4f0e2803aaa8c888118c9caf10e3c810e5fa"
+    },
+    {
+      "path": "src/launcher/PackagePolicyReceiver.java",
+      "bytes": 1669,
+      "sha256": "7e8b15ab2db273096f7603f3f635b96fe297c90e67f03b1f2cd6a1bf113c36fa"
+    },
+    {
+      "path": "src/launcher/assets/icons/brave.png",
+      "bytes": 441454,
+      "sha256": "69870bc5c74de8592ee3f8cef7cd021bcfe2e1fc2c97e76256a5e24136865460"
+    },
+    {
+      "path": "src/launcher/assets/icons/deezer.jpg",
+      "bytes": 14753,
+      "sha256": "a620380c49b34426a144c353a5a169034bd83aaa371d74bb0e4744ba92c7b28e"
+    },
+    {
+      "path": "src/launcher/assets/icons/firefox.png",
+      "bytes": 19638,
+      "sha256": "21b776383aa655cdc4b556ce4409a14489ee9ff32df3b57736a908e5df358a57"
+    },
+    {
+      "path": "src/launcher/assets/icons/maps.jpg",
+      "bytes": 24064,
+      "sha256": "50b6a143b4ae48faeb4ebd63f3bfd5db71fbcafd3438e2a58ecc5fc301dc7f0e"
+    },
+    {
+      "path": "src/launcher/assets/icons/plex.png",
+      "bytes": 5179,
+      "sha256": "e7eeec9e5a861913b2af54e06f7ece4eb3ebe8881578d465ada063996fe587a6"
+    },
+    {
+      "path": "src/launcher/assets/icons/speedplay.png",
+      "bytes": 31722,
+      "sha256": "482ad205e1b1967fffbcfca352f7c128667830115d8bd47d080e4826ab04a073"
+    },
+    {
+      "path": "src/launcher/assets/icons/spotify.png",
+      "bytes": 24505,
+      "sha256": "193ef6f3d236da9a1e1e2991bf44a75a082fb3c99255c9eec9b47ea5f66413f1"
+    },
+    {
+      "path": "src/launcher/assets/icons/spotify.webp",
+      "bytes": 3228,
+      "sha256": "64b292ca754e0c3c56a1913fd60ec556644417c6063208aca863b2ecdb24eb7c"
+    },
+    {
+      "path": "src/launcher/assets/icons/store.png",
+      "bytes": 12228,
+      "sha256": "2038f1d6e337905edebcb7f2f2187e9161395d55a4a29ab094ca6c1f0236d4d6"
+    },
+    {
+      "path": "src/launcher/assets/icons/waze.png",
+      "bytes": 35560,
+      "sha256": "b396f720a7eac6d988e7ef38efcb49028e9d99c54598d7033dc6fe8f2279dfd9"
+    },
+    {
+      "path": "src/launcher/assets/icons/youtube.png",
+      "bytes": 6257,
+      "sha256": "ec2ccb7d510d26d50104d8f01992f0be71d4fbba72b4498772c953ce03228a74"
+    },
+    {
+      "path": "src/launcher/res/values/strings.xml",
+      "bytes": 132,
+      "sha256": "77f902f90667d019af129367ca37e8f57b236369e031d69dd67ea76737104b18"
+    },
+    {
+      "path": "src/launcher/res/xml/navigation.xml",
+      "bytes": 344,
+      "sha256": "c2813af395d6235915ef1b9baca20b45a977bde4bc0eab59b842da70f18c5a18"
+    },
+    {
+      "path": "src/launcher/tests/HomeAppsCheck.java",
+      "bytes": 1157,
+      "sha256": "d943502d85eeeec16f4282e580367e0917593610a72fd5856ef378fc272ade53"
+    },
+    {
+      "path": "src/launcher/tests/LayoutRulesCheck.java",
+      "bytes": 1107,
+      "sha256": "9cdfbe496c8be1e3fff0323ae2b74ccfc863c1fc22b3814fcf22d69fd6696eaf"
+    },
+    {
+      "path": "tests/test_adaptive_encoder.py",
+      "bytes": 1792,
+      "sha256": "a40a3bf4ff3b58bea58ee18dcd1e2e86b341f5cf12bff956b9cc192e5e04587d"
+    },
+    {
+      "path": "tests/test_firstboot.py",
+      "bytes": 3143,
+      "sha256": "c39f4ea28a944b0ad6753100aa8d7221abfe07b79ff950ea8387b54faedb34e9"
+    },
+    {
+      "path": "third_party/README.md",
+      "bytes": 940,
+      "sha256": "d50427b1d5a45374da8363e7c1ee5bca1c93df7e032185a8e5c35a36a9543a54"
+    },
+    {
+      "path": "third_party/dependency-revisions.json",
+      "bytes": 279,
+      "sha256": "dc72561b7db733a72467a7748b814bff907fc4c965c1dadb414545b3b4e082b7"
+    },
+    {
+      "path": "third_party/licenses/libyuv-LICENSE",
+      "bytes": 1506,
+      "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f"
+    },
+    {
+      "path": "third_party/licenses/libyuv-PATENTS",
+      "bytes": 1387,
+      "sha256": "4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495"
+    },
+    {
+      "path": "third_party/licenses/x264-COPYING",
+      "bytes": 17992,
+      "sha256": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670"
+    }
+  ]
+}

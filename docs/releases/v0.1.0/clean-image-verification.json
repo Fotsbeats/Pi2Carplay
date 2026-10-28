@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "archive_sha256": "03fcee5679815c59a1b2f24a9ba5f8cb4474d62ce0f217ac875b7d36fc839c1c",
+  "all_partition_hashes_verified": true,
+  "fresh_userdata_file_count": 68,
+  "userdata_exact_program_allowlist": true,
+  "existing_device_userdata_read": false,
+  "personal_marker_scan_passed": true,
+  "adb_authentication_required": true,
+  "preauthorized_adb_hosts": false,
+  "adaptive_vehicle_test_passed": true,
+  "fresh_image_hardware_boot_tested": false,
+  "other_vehicles_tested": false,
+  "image_sha256": "e963924ea4acbd0b11b0327f6d50962df9e75c5f5514138283220a51e67a7c10",
+  "vehicle_details_included": false
+}

@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "userdata_created_from_scratch": true,
+  "existing_userdata_read": false,
+  "allocated_userdata_matches_allowlist": true,
+  "userdata_file_count": 68,
+  "files_and_archive_members_scanned": 97904,
+  "zip_apk_jar_archives_inspected": 239,
+  "raw_image_and_gaps_scanned": true,
+  "preauthorized_adb_hosts": false,
+  "adb_authentication_required": true,
+  "network_adb_enabled": true,
+  "private_signing_keys_exported": false,
+  "matches": [],
+  "image_sha256": "e963924ea4acbd0b11b0327f6d50962df9e75c5f5514138283220a51e67a7c10",
+  "method": "Program-only allowlist + new ext4 userdata; immutable-file audit; nested APK/JAR audit; raw image/gap pattern scan",
+  "limits": [
+    "No hardware first boot yet",
+    "Pattern scans are defense in depth; absence of user data is established by fresh-filesystem construction and exact file hashes"
+  ],
+  "final_archive_reaudited": true,
+  "userdata_exact_allowlist_reverified": true
+}

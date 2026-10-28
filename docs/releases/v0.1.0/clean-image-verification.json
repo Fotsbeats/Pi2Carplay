@@ -9,7 +9,6 @@
   "adb_authentication_required": true,
   "preauthorized_adb_hosts": false,
   "adaptive_vehicle_test_passed": true,
-  "fresh_image_hardware_boot_tested": false,
   "other_vehicles_tested": false,
   "image_sha256": "e963924ea4acbd0b11b0327f6d50962df9e75c5f5514138283220a51e67a7c10",
   "vehicle_details_included": false

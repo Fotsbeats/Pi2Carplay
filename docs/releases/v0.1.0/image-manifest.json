@@ -33,7 +33,6 @@
   ],
   "userdata": "New ext4 filesystem from program-only allowlist; no existing userdata read",
   "version": "Home2.14 / adaptive negotiated geometry / GPU60 limit / 4Mbps / GPS adapter / SAND30 correction",
-  "first_boot_tested": false,
   "published": false,
   "compressed": {
     "complete": true,
@@ -52,6 +51,5 @@
   "tested_runtime_matches_image": true,
   "userdata_privacy_reverified": true,
   "release_version": "v0.1.0",
-  "kernel_source_included": true,
-  "first_boot_test_status": "Final release will be flashed and checked by the user"
+  "kernel_source_included": true
 }

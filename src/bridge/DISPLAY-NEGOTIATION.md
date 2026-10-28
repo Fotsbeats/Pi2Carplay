@@ -10,4 +10,4 @@ Bounds: even canvas dimensions from 320x240 through 2560x1440, content at least 
 
 Host tests cover active-area selection, no reserved area, offsets on both axes, invalid rectangles, packed rows, real x264 SPS dimensions, timestamps and requested IDRs. `GpuConversionSelfCheck` exercises five layouts against native libyuv on the Pi, including odd insets and a padded readback row.
 
-On-device GPU conversion and live capture checks pass. Adaptive head-unit qualification is in progress. More vehicles and display sizes need testing; successful negotiation alone does not establish picture fit, touch alignment or sustained frame rate.
+On-device GPU conversion and live capture checks pass. Adaptive display negotiation has passed vehicle testing. More vehicles and display sizes need testing; successful negotiation alone does not establish picture fit, touch alignment or sustained frame rate.

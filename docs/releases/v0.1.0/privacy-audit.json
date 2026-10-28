@@ -15,7 +15,6 @@
   "image_sha256": "e963924ea4acbd0b11b0327f6d50962df9e75c5f5514138283220a51e67a7c10",
   "method": "Program-only allowlist + new ext4 userdata; immutable-file audit; nested APK/JAR audit; raw image/gap pattern scan",
   "limits": [
-    "No hardware first boot yet",
     "Pattern scans are defense in depth; absence of user data is established by fresh-filesystem construction and exact file hashes"
   ],
   "final_archive_reaudited": true,

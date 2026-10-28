@@ -1,0 +1,29 @@
+{
+  "commit": "0a92c4615aae909e2b073f18cd0527cd5cd7737c",
+  "files": {
+    "regulatory.db": {
+      "sha256": "7e236caecd939c8ec98be4870bf30422f28ffef2565a38aaaa2d9ddabd0c2641",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/regulatory.db"
+    },
+    "regulatory.db.p7s": {
+      "sha256": "50332f0db09b8bcc719235ec4985c27377f2cc2f42abb7b5dcf951866c5a888a",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/regulatory.db.p7s"
+    },
+    "brcm/BCM4345C0.hcd": {
+      "sha256": "51c45e77ddad91a19e96dc8fb75295b2087c279940df2634b23baf71b6dea42c",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/brcm/BCM4345C0.hcd"
+    },
+    "brcm/brcmfmac43455-sdio.bin": {
+      "sha256": "d608f866582519c0a28d86db43040f4f1b98dd1d153e72e9752586546b4a36c3",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/brcm/brcmfmac43455-sdio.bin"
+    },
+    "brcm/brcmfmac43455-sdio.clm_blob": {
+      "sha256": "9823842cae9fb9a5dd1e5fb31f595516ec7deee341354bef30bb3026eee29cc1",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/brcm/brcmfmac43455-sdio.clm_blob"
+    },
+    "brcm/brcmfmac43455-sdio.txt": {
+      "sha256": "ca709be81a78bdb6932936374f39943acbd7af07fae6151011127599a3ce9e3d",
+      "url": "https://raw.githubusercontent.com/raspberry-vanilla/proprietary_vendor_brcm/0a92c4615aae909e2b073f18cd0527cd5cd7737c/rpi5/proprietary/vendor/firmware/brcm/brcmfmac43455-sdio.txt"
+    }
+  }
+}

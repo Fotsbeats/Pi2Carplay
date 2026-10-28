@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: GPL-2.0 */
+
+#ifndef _SELINUX_POLICYCAP_H_
+#define _SELINUX_POLICYCAP_H_
+
+/* Policy capabilities */
+enum {
+	POLICYDB_CAP_NETPEER,
+	POLICYDB_CAP_OPENPERM,
+	POLICYDB_CAP_EXTSOCKCLASS,
+	POLICYDB_CAP_ALWAYSNETWORK,
+	POLICYDB_CAP_CGROUPSECLABEL,
+	POLICYDB_CAP_NNP_NOSUID_TRANSITION,
+	POLICYDB_CAP_GENFS_SECLABEL_SYMLINKS,
+	POLICYDB_CAP_IOCTL_SKIP_CLOEXEC,
+	POLICYDB_CAP_USERSPACE_INITIAL_CONTEXT,
+	__POLICYDB_CAP_MAX
+};
+#define POLICYDB_CAP_MAX (__POLICYDB_CAP_MAX - 1)
+
+/*
+ * ANDROID: Define this outside of the enum to preserve the KMI.
+ *
+ * This value must match what userspace expects the capability number to be.
+ */
+#define POLICYDB_CAP_GENFS_SECLABEL_WILDCARD 11
+#define POLICYDB_CAP_GENFS_SECLABEL_WILDCARD_NAME "genfs_seclabel_wildcard"
+#define POLICYDB_CAP_MEMFD_CLASS 13
+#define POLICYDB_CAP_MEMFD_CLASS_NAME "memfd_class"
+
+extern const char *const selinux_policycap_names[__POLICYDB_CAP_MAX];
+
+#endif /* _SELINUX_POLICYCAP_H_ */

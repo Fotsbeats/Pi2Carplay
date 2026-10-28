@@ -11,9 +11,9 @@ Includes a dashboard launcher, editable favorites, split screen, audio and touch
 ## What you need
 
 - Raspberry Pi 5 with **2GB RAM or more**. 4GB is recommended.
-- Fast **U3 microSD, 16GB or larger**, and a card reader. A2 is recommended for app performance.
-- Display with a micro-HDMI cable and a USB mouse for first boot. A keyboard is optional.
-- Reliable power and cooling, preferably the Pi 5 active cooler. Some vehicle USB ports cannot supply enough power.
+- Fast **U3 microSD, 16GB or larger**, and a card reader.
+- Display with a micro-HDMI cable and a USB mouse for first boot. A keyboard is optional. Technically you can setup without this and bring Pi right to car but makes things easier to log in and configure android first.
+- Reliable power. Some vehicle USB ports cannot supply enough power. Pi 5 needs 5v 3a Minimum. Pi2Carplay uses a single connected to a wired carplay port for Data and power from the Pi's usb-c connector
 - A **wired CarPlay** USB data port and a data-capable cable to the Pi's **USB-C port**.
 - Wi-Fi or a phone hotspot for app downloads, sign-in and streaming.
 

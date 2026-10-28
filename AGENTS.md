@@ -6,6 +6,8 @@ Pi2Carplay adds a native USB CarPlay bridge, screen capture/encoding, touch/audi
 
 Read README.md, LICENSE-SCOPE.md, third_party/, src/kernel/README.md and src/bridge/DISPLAY-NEGOTIATION.md before changing the base OS. Obtain upstream images from their author and preserve their notices. The protocol SDK implementation remains a binary dependency; this is not a fully reproducible OS or complete SDK source release.
 
+Read [BUILDING.md](BUILDING.md) for toolchain setup and component builds on a fresh clone. Install your own SDK, compiler and signing key; no private developer tools are required. Local development records and tool installations may live in ignored `Development Documentation/`. Never stage that directory or depend on files from another desktop project.
+
 ## Source map
 
 - src/bridge: SDK adapter, USB lifecycle, video transport, touch, PCM audio and vehicle NMEA input.

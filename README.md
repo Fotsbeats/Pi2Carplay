@@ -27,8 +27,6 @@ The bridge uses the Pi's GPU for screen capture and color conversion, with H.264
 4. Put the card in the Pi. Connect the display, mouse and power. Allow several minutes for first-boot app installation, then connect Wi-Fi and sign into your apps.
 5. Shut down the Pi. Move it to the vehicle and connect its **USB-C port to the CarPlay data port**. Power it on and allow about a minute for Android to appear. The Pi's USB-A ports are for accessories.
 
-No personal accounts or saved networks are included. Play Store availability and certification can vary. ADB is enabled for setup and requires authorization. Larger cards do not expand automatically yet.
-
 ## Build and adapt
 Includes an Agents.md so you can customize this to your needs, change launcher themes and configure Android to your liking.
 

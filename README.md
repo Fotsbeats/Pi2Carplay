@@ -28,6 +28,7 @@ Includes a dashboard launcher, editable favorites, split screen, audio and touch
 No personal accounts or saved networks are included. Play Store availability and certification can vary. ADB is enabled for setup and requires authorization. Larger cards do not expand automatically yet.
 
 ## Build and adapt
+Includes an Agents.md so you can customize this to your needs, change launcher themes and configure Android to your liking.
 
 Based on [KonstaKANG AOSP 16](https://konstakang.com/devices/rpi5/AOSP16/) and [Raspberry Vanilla](https://github.com/raspberry-vanilla). The source can be adapted to other Pi Android builds and Android versions; these are not drop-in image upgrades. See [AGENTS.md](AGENTS.md) for the bridge contracts to preserve.
 

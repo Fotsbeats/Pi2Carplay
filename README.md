@@ -6,6 +6,8 @@ Run Android apps on your car's wired CarPlay display using hardware you control.
 
 Includes a dashboard launcher, editable favorites, split screen, audio and touch. The bridge reads the display's negotiated resolution and usable area.
 
+The bridge uses the Pi's GPU for screen capture and color conversion, with H.264 encoding on the CPU. It targets 60fps output and has delivered smooth playback in vehicle testing.
+
 **Early testing release. More vehicles and display sizes need testing. Wired CarPlay only.**
 
 ## What you need

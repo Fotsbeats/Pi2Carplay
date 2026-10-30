@@ -2,6 +2,8 @@
 
 Bluetooth calling, vehicle microphone support and live video controls for the Raspberry Pi 5 Android 16 image.
 
+**Boot-image correction:** the original v0.2.0 download omitted the extended-partition tables, preventing Android from locating system/vendor. Download the replacement ending in **`-bootfix.img.gz`**. It restores the complete partition chain; all filesystem and program bytes are unchanged. Structural checks and archive verification pass; a fresh hardware boot of the replacement still needs testing.
+
 ## Changes since v0.1.0
 
 - Added Bluetooth hands-free calls through the paired phone, with two-way audio over CarPlay. Supports mSBC wideband speech with CVSD fallback, and routes the vehicle microphone into Android recording apps.
@@ -29,4 +31,4 @@ The user reported that the latest combined build passed the car test. A fresh-im
 
 Image assembly, the exact userdata allowlist, the privacy audit and full archive decompression checks passed. See the accompanying image manifest, privacy audit, source checks and SHA256SUMS.
 
-Download `Pi2Carplay-v0.2.0.img.gz` and flash it with Raspberry Pi Imager using the main README. The release also includes the pinned x264, libyuv and BlueZ sbc sources in `Pi2Carplay-v0.2.0-codec-sources.tar.gz`. Project adapters, build scripts and the complete patched kernel source are in this release's Git source archive. Preserve all component notices. The Android base includes non-commercial components; see LICENSE-SCOPE.md and third_party/.
+Download `Pi2Carplay-v0.2.0-bootfix.img.gz` and flash it with Raspberry Pi Imager using the main README. The release also includes the pinned x264, libyuv and BlueZ sbc sources in `Pi2Carplay-v0.2.0-codec-sources.tar.gz`. Project adapters, build scripts and the complete patched kernel source are in this release's Git source archive. The packaging correction and partition-table regression test are on main. Preserve all component notices. The Android base includes non-commercial components; see LICENSE-SCOPE.md and third_party/.

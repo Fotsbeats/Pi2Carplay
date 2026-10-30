@@ -17,5 +17,6 @@
   },
   "latest_combined_car_test": "passed; user reported",
   "fresh_image_hardware_boot": "pending",
-  "full_rollback_execution": "not performed; hashes and shell syntax checked"
+  "full_rollback_execution": "not performed; hashes and shell syntax checked",
+  "partition_table_chain_regression": "7 tests passed; all 5 partitions discoverable; original missing EBR reproduced"
 }

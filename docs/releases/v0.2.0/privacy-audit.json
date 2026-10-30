@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "userdata_created_from_scratch": true,
+  "live_userdata_copied": false,
+  "userdata_exact_program_allowlist": true,
+  "userdata_file_count": 76,
+  "scan_counts": {
+    "files": 3148,
+    "archive_members": 97152
+  },
+  "raw_image_and_partition_gaps_scanned": true,
+  "all_partition_hashes_verified": true,
+  "matches": [],
+  "authenticated_adb": true,
+  "preauthorized_adb_hosts": false,
+  "private_signing_keys_included": false,
+  "image_sha256": "7b4b8dee1906609c6c2fd92a26a98bc80cec9a796558e9a5313b7d91350a9bcb",
+  "fresh_image_hardware_boot_tested": false
+}

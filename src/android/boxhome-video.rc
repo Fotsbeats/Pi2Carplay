@@ -1,0 +1,25 @@
+on property:sys.boot_completed=1
+    setprop sys.boxhome.video.enabled 1
+    start boxhome-video
+
+on property:persist.vendor.pi2video.fps=* && property:sys.boxhome.video.enabled=1
+    setprop sys.boxhome.video.pending 1
+    start boxhome-video
+
+on property:persist.vendor.pi2video.bitrate=* && property:sys.boxhome.video.enabled=1
+    setprop sys.boxhome.video.pending 1
+    start boxhome-video
+
+on property:sys.pi2video.ceiling=* && property:sys.boxhome.video.enabled=1
+    setprop sys.boxhome.video.pending 1
+    start boxhome-video
+
+on property:init.svc.boxhome-video=stopped && property:sys.boxhome.video.pending=1 && property:sys.boxhome.video.enabled=1
+    start boxhome-video
+
+service boxhome-video /system/bin/sh /system/bin/boxhome-video.sh
+    disabled
+    oneshot
+    user root
+    group root system graphics
+    seclabel u:r:su:s0

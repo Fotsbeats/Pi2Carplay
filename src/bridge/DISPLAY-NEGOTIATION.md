@@ -8,6 +8,8 @@ After validation the adapter atomically publishes seven integers: canvas width, 
 
 Bounds: even canvas dimensions from 320x240 through 2560x1440, content at least 320x240 wholly inside the canvas, and frame rate capped at 60. These are allocation/format bounds, not measured performance guarantees. Invalid geometry aborts rather than retaining a previous vehicle's calibration. A mid-session geometry change ends streaming safely; reconnect/restart is required. Each bridge invocation clears the previous geometry file. Runtime resizing without reconnect and rotated/portrait layouts are not qualified.
 
+The negotiated frame rate is a ceiling. Home's independent 30/60 FPS selection caps Android rendering and capture below it, without changing the negotiated geometry file. The default is 30 FPS and 4000 kbit/s; 8000 kbit/s is optional. Bitrate updates use x264 reconfiguration; FPS updates replace only the encoder on its existing framed output, then send new SPS/PPS and an IDR. They do not restart USB or audio. Live head-unit decoder acceptance remains a vehicle-test requirement.
+
 Host tests cover active-area selection, no reserved area, offsets on both axes, invalid rectangles, packed rows, real x264 SPS dimensions, timestamps and requested IDRs. `GpuConversionSelfCheck` exercises five layouts against native libyuv on the Pi, including odd insets and a padded readback row.
 
 On-device GPU conversion and live capture checks pass. Adaptive display negotiation has passed vehicle testing. More vehicles and display sizes need testing; successful negotiation alone does not establish picture fit, touch alignment or sustained frame rate.

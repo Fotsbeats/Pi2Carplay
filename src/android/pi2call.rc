@@ -1,0 +1,39 @@
+on property:sys.boot_completed=1 && property:persist.vendor.pi2call.enabled=1
+    start pi2call-setup
+
+service pi2call-setup /system/bin/sh /vendor/bin/pi2call-setup.sh
+    disabled
+    oneshot
+    user root
+    group root system bluetooth
+    seclabel u:r:su:s0
+
+service pi2call-bluetooth /apex/com.android.hardware.bluetooth.rpi/bin/hw/android.hardware.bluetooth-service.rpi
+    disabled
+    oneshot
+    class hal
+    capabilities BLOCK_SUSPEND NET_ADMIN SYS_NICE
+    user bluetooth
+    group bluetooth
+    task_profiles HighPerformance
+    setenv LD_PRELOAD /system/lib64/libpi2call_hci.so
+
+service pi2call-audio /system/bin/sh /vendor/bin/pi2call-audio.sh
+    disabled
+    oneshot
+    user root
+    group root system audio bluetooth
+    seclabel u:r:su:s0
+
+on property:init.svc.pi2call-bluetooth=stopped && property:persist.vendor.pi2call.enabled=1 && property:sys.pi2call.started=1
+    start pi2call-stock
+
+on property:init.svc.pi2call-audio=stopped && property:persist.vendor.pi2call.enabled=1 && property:sys.pi2call.started=1
+    start pi2call-stock
+
+service pi2call-stock /system/bin/sh /vendor/bin/pi2call-setup.sh --stock
+    disabled
+    oneshot
+    user root
+    group root system bluetooth
+    seclabel u:r:su:s0

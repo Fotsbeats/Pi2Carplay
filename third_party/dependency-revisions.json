@@ -1,4 +1,17 @@
 {
+  "car-dialer": {
+    "source": "https://android.googlesource.com/platform/packages/apps/Car/DialerPrebuilt",
+    "commit": "22ddaf1a82d6db61aab314926e27880c0a258317",
+    "apk_sha256": "6a6f5744b3c7bdd5137384409fbef27234cc2a73be3daeb74d58f8fbb6d11f62",
+    "car_ux_restrictions_source": "https://android.googlesource.com/platform/packages/services/Car/+/refs/tags/android-13.0.0_r1/car-lib/src/android/car/drivingstate/CarUxRestrictions.java",
+    "car_ux_restrictions_sha256": "94ed62b4ad6589362d5367f92b71110f442db9c70c9dce3e0d2e8305d463539d"
+  },
+  "sbc": {
+    "version": "2.1",
+    "source": "https://www.kernel.org/pub/linux/bluetooth/sbc-2.1.tar.xz",
+    "sha256": "426633cabd7c798236443516dfa8335b47e004b0ef37ff107e0c7ead3299fcc2",
+    "license": "LGPL-2.1-or-later"
+  },
   "x264": {
     "commit": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
     "source": "https://code.videolan.org/videolan/x264.git"

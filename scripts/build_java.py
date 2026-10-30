@@ -22,6 +22,8 @@ if __name__=='__main__':
     for folder,exclude,name in [('capture',{'FramePipelineTest.java','DisplayGeometryTest.java'},'display-capture.jar'),('audio',set(),'audio-capture.jar')]:
         dex=compile_dex([s for s in (ROOT/'src'/folder).glob('*.java') if s.name not in exclude],out/folder,android,tools)
         with zipfile.ZipFile(out/name,'w',zipfile.ZIP_STORED) as z:z.write(dex,'classes.dex')
+    run('javac','--release','8','-d',out/'capture-tests',ROOT/'src/capture/VideoMode.java',ROOT/'tests/VideoModeTest.java')
+    run('java','-ea','-cp',out/'capture-tests','VideoModeTest')
     source=ROOT/'src/launcher';work=out/'launcher';dex=compile_dex(list(source.glob('*.java')),work,android,tools)
     for test,sources in [('LayoutRulesCheck',['LayoutRules.java']),('HomeAppsCheck',['HomeApps.java'])]:
         run('javac','-encoding','UTF-8','--release','8','-d',work/'tests',*[source/n for n in sources],source/'tests'/(test+'.java'))

@@ -6,9 +6,11 @@ Run Android apps on your car's wired CarPlay display using hardware you control.
 
 Includes a dashboard launcher, editable favorites, split screen, audio and touch. The bridge reads the display's negotiated resolution and usable area.
 
-The bridge uses the Pi's GPU for screen capture and color conversion, with H.264 encoding on the CPU. It targets 60fps output and has delivered smooth playback in vehicle testing.
+The bridge uses the Pi's GPU for screen capture and color conversion, with H.264 encoding on the CPU. Video defaults to **4 Mbps / 30 FPS**. Home settings offers live **4/8 Mbps** and **30/60 FPS** controls; the receiver's negotiated frame rate remains the ceiling. Sustained performance depends on the apps and display resolution.
 
 **Early testing release. More vehicles and display sizes need testing. Wired CarPlay only.**
+
+The [v0.2.0 release notes](docs/releases/v0.2.0/README.md) cover calling, live video controls and UI fixes. The combined build passed vehicle testing; fresh-image hardware boot remains untested.
 
 ## What you need
 
@@ -26,6 +28,31 @@ The bridge uses the Pi's GPU for screen capture and color conversion, with H.264
 3. Select your microSD and write it. **This erases the card.** Skip Raspberry Pi OS customization and let verification finish.
 4. Put the card in the Pi. Connect the display, mouse and power. Allow several minutes for first-boot app installation, then connect Wi-Fi and sign into your apps.
 5. Shut down the Pi. Move it to the vehicle and connect its **USB-C port to the CarPlay data port**. Power it on and allow about a minute for Android to appear. The Pi's USB-A ports are for accessories.
+
+## Fix “This device isn’t Play Protect certified”
+
+If Play Store or YouTube blocks access, register **your Pi’s own Google Services Framework ID**. Connect ADB to the Pi, run `adb shell`, then `su 0`, and query the ID on this image:
+
+```sh
+sqlite3 -readonly /data/user/0/com.google.android.gms/databases/gservices.db "SELECT value FROM main WHERE name='android_id';"
+```
+
+Submit that value at [Google’s device registration page](https://www.google.com/android/uncertified/), using the **same Google account signed into the Pi**. Allow time for registration to apply, then reopen the apps. This registers custom-ROM access; it does not confer official hardware certification.
+
+If access remains blocked, an old compliance response may still be cached. In the root shell, back up only these caches, then reopen Play Store and YouTube:
+
+```sh
+backup=/data/local/tmp/google-compliance-$(date +%s)
+mkdir -m 700 "$backup" || exit 1
+for pkg in com.android.vending com.google.android.youtube com.google.android.gms; do
+    am force-stop "$pkg"
+done
+mv /data/user/0/com.google.android.gms/files/gmscompliance/shared/cache.pb "$backup/services.pb"
+mv /data/user/0/com.android.vending/cache/gmscompliance.pb "$backup/store.pb"
+mv /data/user/0/com.google.android.youtube/cache/gmscompliance.pb "$backup/youtube.pb"
+```
+
+Skip missing cache files. Keep Google services storage intact so your account and registered ID are preserved. Never include your ID, account data or these backups in a release image.
 
 ## Build and adapt
 Includes an Agents.md so you can customize this to your needs, change launcher themes and configure Android to your liking.

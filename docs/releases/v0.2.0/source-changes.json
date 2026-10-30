@@ -1,0 +1,397 @@
+{
+  "base_commit": "0c0c7ecb39fe0b488a9e5211601efb807f36d129",
+  "uncommitted_changes": [
+    {
+      "path": "BUILDING.md",
+      "bytes": 9040,
+      "sha256": "634bc8279a5b79dca9020846d2568e8159d8d547b46ca35ad1af50e10fcb2182"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4727,
+      "sha256": "2d8f92cf10caf5ac7ccfa35f478338c49543f26924e4009c0f4e595fb5a6ecea"
+    },
+    {
+      "path": "scripts/build_bridge.sh",
+      "bytes": 2154,
+      "sha256": "f3b46f3eac1f756495a3d4279dec1de0956074e4b2a424d9a2b83c149ebcd443"
+    },
+    {
+      "path": "scripts/build_calling.py",
+      "bytes": 1439,
+      "sha256": "6b7d2920c0dde6d0c606937b584ea4a6e8f7daaaac274ace692ce2236ad82074"
+    },
+    {
+      "path": "scripts/build_calling.sh",
+      "bytes": 1404,
+      "sha256": "c7da28da4f6a451668ca48377e8374fa484c5fe8e9270322ac891d66c45cd433"
+    },
+    {
+      "path": "scripts/build_car_dialer.py",
+      "bytes": 9974,
+      "sha256": "1b459adec20f3426b4094d49c33366eecdc571a4e2cda0a9d5dfbe06e03ac432"
+    },
+    {
+      "path": "scripts/build_java.py",
+      "bytes": 2680,
+      "sha256": "923764c385f01e13ba850120ae3b02908dcbf4c5d5f92c4cf64272d6694ac69f"
+    },
+    {
+      "path": "scripts/build_rail_insets.py",
+      "bytes": 6514,
+      "sha256": "d9fb59232accd1e815668ac367ed1af3d2624a16e9d9e5ea12d0f45a7bf928c8"
+    },
+    {
+      "path": "scripts/car_dialer_manifest.py",
+      "bytes": 2894,
+      "sha256": "9ef1a7ed2d9638b0d06beb3cf08942978af8087b2f462b62e45bfd507f02a5db"
+    },
+    {
+      "path": "src/android/boxhome-landscape.sh",
+      "bytes": 682,
+      "sha256": "432e80ae27c7f336925fc578d25596ae339deb425b5c8bd553669bcf51a639f0"
+    },
+    {
+      "path": "src/android/boxhome-video.rc",
+      "bytes": 843,
+      "sha256": "d46493e3e59d335a081bd2c3b511c2df79cead565ba9981ab863cff86ee5230d"
+    },
+    {
+      "path": "src/android/boxhome-video.sh",
+      "bytes": 870,
+      "sha256": "bc3e9e773677a9290a661fa431ace0caea8cde86fad4eac4729d5cdc70ec1580"
+    },
+    {
+      "path": "src/android/car-dialer-default-permissions.xml",
+      "bytes": 715,
+      "sha256": "36c917274cd86f3297f146c5226aedd3ff71e1bc585c4d030fe30d7ae04c8ff5"
+    },
+    {
+      "path": "src/android/car-dialer-hiddenapi.xml",
+      "bytes": 80,
+      "sha256": "be9f9974adf7fad53e28bbd24acf2975c5c28a0dffac138ff215cfd8d16cca56"
+    },
+    {
+      "path": "src/android/car-dialer-icon/AndroidManifest.xml",
+      "bytes": 232,
+      "sha256": "beecfa9003cc54877361aae548e8a23e1294b4f3a907739e96f675a3b5c2f572"
+    },
+    {
+      "path": "src/android/car-dialer-icon/res/drawable/ic_app_icon.xml",
+      "bytes": 1860,
+      "sha256": "1c974719a6198ffcdcd069e12c5521813b33ffb56b60e35611323c411b1732d2"
+    },
+    {
+      "path": "src/android/car-dialer-permissions.xml",
+      "bytes": 364,
+      "sha256": "b72afbb7689f3fc55472d3b2da6134f8a04372fafde02f1a8e614f35a0c38fb9"
+    },
+    {
+      "path": "src/android/car-dialer-rollback.sh",
+      "bytes": 1617,
+      "sha256": "976ce04d5d7b8257c13bea1a618efdfbea3e0ac2b09d75d907981a8b839abc1b"
+    },
+    {
+      "path": "src/android/car-dialer-setup.sh",
+      "bytes": 335,
+      "sha256": "d828efdd4795bcb064f978e6533cb647a26fcd22c1865770e762a7938568d74c"
+    },
+    {
+      "path": "src/android/opencarplay-firstboot.sh",
+      "bytes": 5283,
+      "sha256": "a7e8ee8e4aad774cba4d2b1fd38fbf7a251fed8449f7ab345c5b5ed6be091c68"
+    },
+    {
+      "path": "src/android/pi2call-audio.sh",
+      "bytes": 277,
+      "sha256": "074d4fa5af0aa26b46b10685d3251b0da4318cd23ce99dcfa622634e6090274c"
+    },
+    {
+      "path": "src/android/pi2call-rollback.sh",
+      "bytes": 1512,
+      "sha256": "ff06e0b0f0089d33068ecc5944f6ee191cf0b3aba308cf2ee30196f3c43346b7"
+    },
+    {
+      "path": "src/android/pi2call-setup.sh",
+      "bytes": 3396,
+      "sha256": "25042a81ddf175d4edb344e3ffa121c64e4d740a4f31e75e502b7c53093c9929"
+    },
+    {
+      "path": "src/android/pi2call.rc",
+      "bytes": 1227,
+      "sha256": "56632bbd615de6a4ef7e4382c35fd5bddfa033bfefa47673fde41a89c01e79bc"
+    },
+    {
+      "path": "src/android/rail-insets.smali",
+      "bytes": 1657,
+      "sha256": "95172ec1609347730a3c97a74525aa582e58639dff4a66b667f9fc21e3c5b3f6"
+    },
+    {
+      "path": "src/audio/CALLING.md",
+      "bytes": 11764,
+      "sha256": "a11ed037609b59e0d87c8b3e4418e7e4983f938a1f479bb15b0b03d86fed54cf"
+    },
+    {
+      "path": "src/audio/CAR-DIALER.md",
+      "bytes": 10744,
+      "sha256": "32e005be0fa2d1dce7ecbad80067bc9ba143d75d8b73329874ee2c10daaa0ee4"
+    },
+    {
+      "path": "src/audio/call_hci.c",
+      "bytes": 10525,
+      "sha256": "d306066b3e330ca2a10a3ce49d03bf57f73fa59638550a69b0301519922690c5"
+    },
+    {
+      "path": "src/audio/call_msbc.h",
+      "bytes": 2737,
+      "sha256": "99732b8f9f846020805543f9760fb0ef6721b3df1bcc14149c857f3fcffc5b98"
+    },
+    {
+      "path": "src/audio/call_pcm.h",
+      "bytes": 1315,
+      "sha256": "d05882f8af1c2f29408be99691bbac2e8f70918729ba330bc1803c4e82e4f5a3"
+    },
+    {
+      "path": "src/audio/call_resample.c",
+      "bytes": 1850,
+      "sha256": "1d0cfd7c09eec6b7fe8251606f2e27c81747a56e1eec5197ee7523540cc2c926"
+    },
+    {
+      "path": "src/audio/test_call_hci.c",
+      "bytes": 5509,
+      "sha256": "c6278e37f395ad75e3538a4c65cb57589cbf899b87867ee010ae5bff93998cff"
+    },
+    {
+      "path": "src/bridge/DISPLAY-NEGOTIATION.md",
+      "bytes": 2804,
+      "sha256": "bfbefbaf796a1cb9ae1415ffaadcc6dc95ac9bed3c176683817cd8df3d8d3479"
+    },
+    {
+      "path": "src/bridge/aibox-handshake.sh",
+      "bytes": 5126,
+      "sha256": "bb3afde6f2444f3edbd97acc07ec065369d8d06be08ff44ec458d7347400fdf9"
+    },
+    {
+      "path": "src/bridge/audio.h",
+      "bytes": 4723,
+      "sha256": "df28d8772b8b8e91ab5a1568ca5234c8bc80588e36312dceb58e046ac8789137"
+    },
+    {
+      "path": "src/bridge/call_audio.h",
+      "bytes": 3557,
+      "sha256": "c93a2ce88337f42a68877c127b3a5aa0c2ba0aeed4ab4cf42256a174a3d825f3"
+    },
+    {
+      "path": "src/bridge/call_mic.h",
+      "bytes": 791,
+      "sha256": "5ab743ddfd86f0ddc156a6e7ec1bac8a25dcabbf0fc6c3f660edfa40815215f0"
+    },
+    {
+      "path": "src/bridge/call_playback.h",
+      "bytes": 1251,
+      "sha256": "19ddda4695fcb5cd48a1ee91e5c4a57dc94c81b345702da1be43ba7817e81a95"
+    },
+    {
+      "path": "src/bridge/handshake_probe.c",
+      "bytes": 15663,
+      "sha256": "06407757352dbb676a3891a47fdcc79253d8b30daabfa78d37363f584f18f253"
+    },
+    {
+      "path": "src/bridge/test_audio.c",
+      "bytes": 4415,
+      "sha256": "3008e753666d53b5ba9ce1a92af5fc6e4b878be077bdea1caea254349fccfe50"
+    },
+    {
+      "path": "src/bridge/test_call_audio.c",
+      "bytes": 2909,
+      "sha256": "75bbc29e5ba9727a02b32039cc0e29a6156c73e31dafec3b48b13ec430f5ca1e"
+    },
+    {
+      "path": "src/bridge/test_call_mic.c",
+      "bytes": 1274,
+      "sha256": "399dbd9a113e200e633a35f223d56862439719c6d2e5ebc307abb5e6cd8d604c"
+    },
+    {
+      "path": "src/bridge/test_call_playback.c",
+      "bytes": 1743,
+      "sha256": "be3d246bc978b8090822c342affaddad7537de47af613b73ce9f269f3abbe2d8"
+    },
+    {
+      "path": "src/bridge/test_call_sdk.c",
+      "bytes": 3147,
+      "sha256": "7254aeb0da226b1d58d8f6f6b8749d3a1ccc021623a4d4c3153dae36f0072453"
+    },
+    {
+      "path": "src/calling-ui/PiCallBar.java",
+      "bytes": 8308,
+      "sha256": "049519c49bd6e41e902e4d7c6df1b9988724ac2f057b237ed0c1068a7766d481"
+    },
+    {
+      "path": "src/calling-ui/PiCallerInfo.java",
+      "bytes": 1320,
+      "sha256": "b0c68a0f1b85444586ce9e2579ff0ccc2a5e454bd8e04eba6fb15c0d6df440ef"
+    },
+    {
+      "path": "src/calling-ui/PiPhoneUi.java",
+      "bytes": 8829,
+      "sha256": "2b32baedc5c5b7274d0bb54ab0c33141435574c111f605c250d5e6962c2eb1a6"
+    },
+    {
+      "path": "src/calling/AndroidManifest.xml",
+      "bytes": 677,
+      "sha256": "3f1b5ae403a198758de998caf4e6fbc7b9f108549d52551b5b0653c3e502c409"
+    },
+    {
+      "path": "src/calling/CallAudio.java",
+      "bytes": 28140,
+      "sha256": "50add2054f0fb535b7cced5a7cfe94a90d261814985e21621e318f268d9b5526"
+    },
+    {
+      "path": "src/calling/CallDemand.java",
+      "bytes": 580,
+      "sha256": "a1ca3b59d48f253d8ab085335f0011bae1c90d388c1d98184abd29f6a19bbcf6"
+    },
+    {
+      "path": "src/calling/CallResampler.java",
+      "bytes": 279,
+      "sha256": "c38024646e65236d970024de3ba8ea855749285e8c6dae4914265961e565d3a1"
+    },
+    {
+      "path": "src/calling/Calls.java",
+      "bytes": 3951,
+      "sha256": "5b59b2bffabc8ef7541baa540785424e3fb1be72d0f64425f7aa085495be610d"
+    },
+    {
+      "path": "src/capture/DisplayCapture.java",
+      "bytes": 8422,
+      "sha256": "167cd4cbf0620ae1b9bff9d519be9ea1bede0163d26621f6166fce051e0352f4"
+    },
+    {
+      "path": "src/capture/GpuI420.java",
+      "bytes": 7698,
+      "sha256": "f88885fb289d87095f9e0096650544bb6e478f922032ed9a3ac0ca3ef02b2b6d"
+    },
+    {
+      "path": "src/capture/VideoMode.java",
+      "bytes": 508,
+      "sha256": "dc92975b7aa545f5f88ea1178eb927a4b9ca754aa4a69369a12d9f803facf6a2"
+    },
+    {
+      "path": "src/capture/adaptive_encoder_test.c",
+      "bytes": 1932,
+      "sha256": "78049660aa79acf9b7ffe072630e03c1398e728e19fcbedc21d267ab35585331"
+    },
+    {
+      "path": "src/capture/encoder_core.c",
+      "bytes": 6635,
+      "sha256": "281a7c33fc15ce18ba584e12ae4269fc0fad1b21c23be9bb21d3bbbcb6bc5f13"
+    },
+    {
+      "path": "src/capture/encoder_core.h",
+      "bytes": 612,
+      "sha256": "3d78399c119a839b5a62e8b14dcdc4870c1be2915a293395d91522711ced6fa4"
+    },
+    {
+      "path": "src/capture/encoder_jni.c",
+      "bytes": 3097,
+      "sha256": "88cf46a537c926f551cc4371395781acf656849d1d22cb1645b6a313d0e4bfa3"
+    },
+    {
+      "path": "src/launcher/AndroidManifest.xml",
+      "bytes": 1924,
+      "sha256": "b33821b4499145d9ee923852e598df0e8cc5ee2397b249c4260faec99809ae93"
+    },
+    {
+      "path": "src/launcher/Home.java",
+      "bytes": 31449,
+      "sha256": "b7d33c7273f4eeee812c0653db753704b23389358021d8fd4d6175f9ffbedea3"
+    },
+    {
+      "path": "src/launcher/HomeSettings.java",
+      "bytes": 8716,
+      "sha256": "b29850e533f57c0da4f99f466205bcd65d3f066c7c5d010d7c2f1ebd2f064f68"
+    },
+    {
+      "path": "tests/CallDemandTest.java",
+      "bytes": 756,
+      "sha256": "da134ee7f7265651d7416e9fe498316f0548bb0331092e28626bdf893cd24c31"
+    },
+    {
+      "path": "tests/CallPlaybackTest.java",
+      "bytes": 4558,
+      "sha256": "71080a7a25e0d32d34163dd8c900bac53004785cde6a377f81d30f67cfd64ff4"
+    },
+    {
+      "path": "tests/CarCallerInfoTest.java",
+      "bytes": 3819,
+      "sha256": "e2a6136339a8ff2fe5b224d160fc96b0be4cc86fc2650e88023b05a2df17c50e"
+    },
+    {
+      "path": "tests/CarDialerCompatTest.java",
+      "bytes": 3157,
+      "sha256": "622f72fc80a262bd886d81add019e8a1f199f75cafa9d88aaface875fe6b5666"
+    },
+    {
+      "path": "tests/CarDialerIconTest.java",
+      "bytes": 1434,
+      "sha256": "a56f57d042ea3aa44a75a6bf13037f6747c93c874e5ce54cec28419799571ec1"
+    },
+    {
+      "path": "tests/KeyboardRailInsetsTest.java",
+      "bytes": 2873,
+      "sha256": "1d158c6546157da1718bc4a841088437c861dac68177972d2c08ef72b171ecdb"
+    },
+    {
+      "path": "tests/VideoModeTest.java",
+      "bytes": 775,
+      "sha256": "2eba67b8dc4cfa45857b730611dc5bfb255e846ce411f0b8a39504439fa50860"
+    },
+    {
+      "path": "tests/test_adaptive_encoder.py",
+      "bytes": 3035,
+      "sha256": "db0c572f7175813d773d1fa84655a649e01ac9f54fe788ebf2e91184eefe4b60"
+    },
+    {
+      "path": "tests/test_car_dialer_manifest.py",
+      "bytes": 2148,
+      "sha256": "2618b9b065e8ea4df02831f9e2c898cad518e8ffaf99a08be007b6587f002c0d"
+    },
+    {
+      "path": "tests/test_car_dialer_ui.py",
+      "bytes": 2237,
+      "sha256": "150c73976d4620914c2f95eb40778000b232f45f69c7777b1c71cdfb0bc5f833"
+    },
+    {
+      "path": "tests/test_firstboot.py",
+      "bytes": 3675,
+      "sha256": "8531223a9b4db49d66b9e66076316a22a009fe00f426fc6fcec6743f73f592d8"
+    },
+    {
+      "path": "tests/test_video_policy.py",
+      "bytes": 2559,
+      "sha256": "1d8fe75a87e383ba0c033e4c0e9c54ad4829ba117e44d580f34a1ba1b61a606f"
+    },
+    {
+      "path": "third_party/README.md",
+      "bytes": 2161,
+      "sha256": "5e9654a13d14a4b859e79fbbeb7777eeeed56046a4d8944786ba87855d9444f5"
+    },
+    {
+      "path": "third_party/dependency-revisions.json",
+      "bytes": 1060,
+      "sha256": "2162b55f8aecefe34103885ad5af1e491ba8ec1f6c19071cb81156999113fdde"
+    },
+    {
+      "path": "third_party/licenses/AOSP-APACHE-2.0",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "third_party/licenses/sbc-COPYING.LIB",
+      "bytes": 26423,
+      "sha256": "ec60b993835e2c6b79e6d9226345f4e614e686eb57dc13b6420c15a33a8996e5"
+    }
+  ],
+  "published": false,
+  "hash_basis": "Working-tree bytes at image assembly; Git may normalize line endings. This is the build-input snapshot, not a rolling source inventory."
+}

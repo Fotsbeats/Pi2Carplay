@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.bench.pi2call" android:versionCode="1" android:versionName="0.1-test">
+  <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="30"/>
+  <application android:label="Calls" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:usesCleartextTraffic="false">
+    <activity android:name=".Calls" android:exported="true" android:screenOrientation="landscape">
+      <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+    </activity>
+  </application>
+</manifest>

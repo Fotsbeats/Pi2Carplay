@@ -21,5 +21,16 @@ int main(int argc,char **argv) {
         for(int frame=0;frame<3;frame++)assert(!encoder_frame_i420(e,yuv,1000+frame*1000/fps,frame==2));
         encoder_close(e);free(yuv);
     }
+    char path[512];assert(snprintf(path,sizeof(path),"%s/live-switch.bin",argv[1])<(int)sizeof(path));
+    int fd=open(path,O_CREAT|O_TRUNC|O_WRONLY,0600);assert(fd>=0);close(fd);
+    unsigned char *yuv=malloc(800*480*3/2);assert(yuv);memset(yuv,128,800*480*3/2);
+    Encoder *e=encoder_open(path,800,480,30);assert(e);
+    assert(encoder_reconfigure(e,0,4000)==-1&&encoder_reconfigure(e,30,6000)==-1);
+    assert(!encoder_frame_i420(e,yuv,1000,0));
+    assert(!encoder_reconfigure(e,30,8000));assert(!encoder_frame_i420(e,yuv,1033,0));
+    assert(!encoder_reconfigure(e,60,8000));assert(!encoder_frame_i420(e,yuv,1066,0));
+    assert(!encoder_frame_i420(e,yuv,1083,0));
+    assert(!encoder_reconfigure(e,30,4000));assert(!encoder_frame_i420(e,yuv,1100,0));
+    encoder_close(e);free(yuv);
     return 0;
 }

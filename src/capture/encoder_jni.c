@@ -27,6 +27,10 @@ JNIEXPORT void JNICALL Java_DisplayCapture_encodeFrame(JNIEnv *env,jclass cls,jl
 JNIEXPORT void JNICALL Java_DisplayCapture_closeEncoder(JNIEnv *env,jclass cls,jlong handle) {
     (void)env; (void)cls; encoder_close((Encoder *)(intptr_t)handle);
 }
+JNIEXPORT void JNICALL Java_DisplayCapture_configureEncoder(JNIEnv *env,jclass cls,jlong handle,jint fps,jint bitrate) {
+    (void)cls;
+    if(encoder_reconfigure((Encoder *)(intptr_t)handle,fps,bitrate))fail(env,"Native AVC configuration failed");
+}
 
 JNIEXPORT void JNICALL Java_DisplayCapture_encodeI420(JNIEnv *env,jclass cls,jlong handle,
     jobject buffer,jint stamp,jint force) {

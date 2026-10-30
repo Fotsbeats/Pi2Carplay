@@ -1,0 +1,91 @@
+{
+  "version": "v0.2.0",
+  "defaults": {
+    "fps": 30,
+    "bitrate_kbps": 4000
+  },
+  "properties": {
+    "persist.vendor.aibox.auto": "0",
+    "persist.vendor.aibox.handshake": "0",
+    "persist.adb.tcp.port": "-1",
+    "persist.vendor.audio.device": "hdmi0",
+    "persist.vendor.gps.device": "box-carplay-gps",
+    "persist.vendor.pi2call.enabled": "1",
+    "persist.vendor.pi2video.fps": "30",
+    "persist.vendor.pi2video.bitrate": "4000"
+  },
+  "baseline_sha256": "e963924ea4acbd0b11b0327f6d50962df9e75c5f5514138283220a51e67a7c10",
+  "programs": {
+    "/system/lib64/libpi2call_hci.so": "894a818e29a0ded3fa90f5a82d7df8b32f8e1bb6120d3f1d87f1e46c134e8093",
+    "/system/framework/services.jar": "6015a06cdc787f78b8f43cc81fcb026e6ac30b1c85fbe75e10840d8bb5e6f813",
+    "/system/app/BoxHomePi16/BoxHomePi16.apk": "e6c1d06fd2d0fff14424d2c42f229037f99a3398599e33ccb12a3e1e8225ba55",
+    "/system/priv-app/Pi2CarDialer/CarDialerApp.apk": "45eb60ac12eb19e2f97732736d22c19e021608d9b1b7a6fbc2d173019408fcab",
+    "/system/app/Pi2Call/Calls.apk": "7129571dbc7d4574e8cf5248c3d6583bc2e7afdc7275190b6d7d07326fcb4905",
+    "/system/bin/boxhome-landscape.sh": "432e80ae27c7f336925fc578d25596ae339deb425b5c8bd553669bcf51a639f0",
+    "/system/bin/opencarplay-firstboot.sh": "a7e8ee8e4aad774cba4d2b1fd38fbf7a251fed8449f7ab345c5b5ed6be091c68",
+    "/system/bin/boxhome-video.sh": "bc3e9e773677a9290a661fa431ace0caea8cde86fad4eac4729d5cdc70ec1580",
+    "/system/etc/init/boxhome-video.rc": "d46493e3e59d335a081bd2c3b511c2df79cead565ba9981ab863cff86ee5230d",
+    "/vendor/bin/aibox-handshake.sh": "bb3afde6f2444f3edbd97acc07ec065369d8d06be08ff44ec458d7347400fdf9",
+    "/vendor/bin/pi2call-setup.sh": "25042a81ddf175d4edb344e3ffa121c64e4d740a4f31e75e502b7c53093c9929",
+    "/vendor/bin/pi2call-audio.sh": "074d4fa5af0aa26b46b10685d3251b0da4318cd23ce99dcfa622634e6090274c",
+    "/vendor/bin/car-dialer-setup.sh": "d828efdd4795bcb064f978e6533cb647a26fcd22c1865770e762a7938568d74c",
+    "/vendor/etc/init/pi2call.rc": "56632bbd615de6a4ef7e4382c35fd5bddfa033bfefa47673fde41a89c01e79bc",
+    "/system/etc/permissions/pi2call-car-dialer.xml": "b72afbb7689f3fc55472d3b2da6134f8a04372fafde02f1a8e614f35a0c38fb9",
+    "/system/etc/sysconfig/pi2call-car-dialer.xml": "be9f9974adf7fad53e28bbd24acf2975c5c28a0dffac138ff215cfd8d16cca56",
+    "/system/etc/default-permissions/pi2call-car-dialer.xml": "36c917274cd86f3297f146c5226aedd3ff71e1bc585c4d030fe30d7ae04c8ff5"
+  },
+  "runtime": {
+    "/data/local/tmp/pi5-display-capture.jar": "461e490b11f7ee620e847a112b6aaf572a6ab4fe26c01aabe6eefe936c7d499e",
+    "/data/local/tmp/pi5-experimental/libcapture_encoder.so": "a51cdf09573f6a1548c049bf0dcba158bad9b023ffa703a59cdf7330ead3e3fa",
+    "/data/local/tmp/pi5-protocol/bin/handshake-probe": "654e4ae9efbf221e9594aca9021ba391ec9cd7d9995ecfcd271636b6fe8d3e2b",
+    "/data/local/tmp/pi2call/call-audio.jar": "36b512900d11252195aee54e1c6b7c2324a2049e46028e56710f481cc6e9519e",
+    "/data/local/tmp/pi2call/libpi2call_resample.so": "a0944465a688a3be03678ac8a84280c7ab0d9356ed352ab6698eda33fe9923ad"
+  },
+  "fresh_image_hardware_boot_tested": false,
+  "latest_combined_car_test_passed": true,
+  "image": "Pi2Carplay-v0.2.0.img",
+  "bytes": 15360000000,
+  "sha256": "7b4b8dee1906609c6c2fd92a26a98bc80cec9a796558e9a5313b7d91350a9bcb",
+  "partitions": [
+    {
+      "name": "boot",
+      "start_sector": 2048,
+      "bytes": 134217728,
+      "sha256": "272129c99f14fb539562f4c450a6a8dd98d79bb5812c81597694bc8ea256e597"
+    },
+    {
+      "name": "system",
+      "start_sector": 266240,
+      "bytes": 3221225472,
+      "sha256": "4e23c362d7b8d4cdf395ec8a64fa6dc72be3fcf7a20a6fa4703769181e1bcd9c"
+    },
+    {
+      "name": "vendor",
+      "start_sector": 6559744,
+      "bytes": 402653184,
+      "sha256": "98859fdd80662fc05afa2a425fd0f7591dc1aefee7391172d4c84b6c92fb519b"
+    },
+    {
+      "name": "userdata",
+      "start_sector": 7383040,
+      "bytes": 11579883520,
+      "sha256": "c6ae444d9f511abf4043379483c1a0d84c24732500527700b58f9fa5c0f06c3a"
+    }
+  ],
+  "assembly_verified": true,
+  "privacy_audit_complete": true,
+  "archive_full_decompression_verified": true,
+  "compressed": {
+    "file": "Pi2Carplay-v0.2.0.img.gz",
+    "bytes": 1627879375,
+    "sha256": "441e9895e83bcb94892a6aada83e3594eb10ada185ea9a3d31df05a90ef0aefa"
+  },
+  "release_tag": "v0.2.0",
+  "release_channel": "stable",
+  "car_test_evidence": "User reported successful test of the installed combined build",
+  "codec_sources": {
+    "file": "Pi2Carplay-v0.2.0-codec-sources.tar.gz",
+    "bytes": 2103284,
+    "sha256": "2e294b6e5bbdab8c58ec0ed87e04d236488dd944a414a32dc45bd38d0d36ddba"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "firstboot_install_resume_retry": "passed",
+  "video_policy_defaults_choices_receiver_limits": "passed",
+  "video_mode_geometry_frame_pipeline": "passed",
+  "launcher_layout_and_home_apps": "passed",
+  "car_dialer_manifest": "passed",
+  "six_real_x264_geometries_and_live_transitions": "passed",
+  "native_audio_lifecycle_transport_microphone_and_pacing": "passed",
+  "native_geometry_touch_nmea_gps": "passed",
+  "recorded_on_device_checks": {
+    "four_live_video_combinations_one_capture_process": "passed",
+    "android_scheduler_30_and_60_fps": "passed",
+    "gpu_conversion_against_native_libyuv": "passed",
+    "synthetic_voice_and_media_clocks": "passed",
+    "sidebar_recents_and_two_app_split_view": "passed",
+    "navigation_survives_restart": "passed"
+  },
+  "latest_combined_car_test": "passed; user reported",
+  "fresh_image_hardware_boot": "pending",
+  "full_rollback_execution": "not performed; hashes and shell syntax checked"
+}

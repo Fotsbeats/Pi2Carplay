@@ -36,3 +36,32 @@ for w,h,fps in [(800,480,30),(1280,720,30),(1282,722,60),(1920,720,60),(1920,108
     assert mw*16-2*(crop[0]+crop[1])==w
     assert mh*16-2*(crop[2]+crop[3])==h
 print('PASS: six real x264 streams, cropped SPS dimensions, timestamps and forced IDR')
+
+data=(Path(sys.argv[1])/'live-switch.bin').read_bytes();packets=[];rates=[]
+while data:
+    size,config,stamp=struct.unpack('>III',data[:12]);assert 0<size<=2097152
+    payload=data[12:12+size];assert len(payload)==size
+    offset=4 if payload[:4]==b'\0\0\0\1' else 3
+    nal=payload[offset:];packets.append((config,stamp,nal[0]&31));data=data[12+size:]
+    if not config:continue
+    b=Bits(nal[1:].replace(b'\0\0\3',b'\0\0'));assert b.read(8)==66
+    b.read(8);b.read(8);b.ue();b.ue();poc=b.ue();assert poc in (0,2)
+    if poc==0:b.ue()
+    b.ue();b.read(1);b.ue();b.ue();assert b.read(1)==1;b.read(1)
+    if b.read(1):
+        for _ in range(4):b.ue()
+    assert b.read(1)==1
+    if b.read(1):
+        aspect=b.read(8)
+        if aspect==255:b.read(32)
+    if b.read(1):b.read(1)
+    if b.read(1):
+        b.read(4)
+        if b.read(1):b.read(24)
+    if b.read(1):b.ue();b.ue()
+    assert b.read(1)==1
+    tick=b.read(32);scale=b.read(32);rates.append(scale/(2*tick))
+assert rates==[30,60,30],rates
+assert [p[2] for p in packets]==[7,5,5,7,5,1,7,5],packets
+assert [p[1] for p in packets]==[0,1000,1033,0,1066,1083,0,1100]
+print('PASS: live 4/8 Mbps and 30/60/30 FPS, refreshed Baseline SPS timing, IDRs and continuous packet timestamps')

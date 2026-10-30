@@ -8,7 +8,9 @@ marker=/data/local/tmp/opencarplay-setup.complete
 umask 077
 exec >> /data/local/tmp/opencarplay-firstboot.log 2>&1
 for key in window_animation_scale transition_animation_scale animator_duration_scale; do settings put global "$key" 0; done
-for key in min_refresh_rate peak_refresh_rate; do settings put system "$key" 60.0; done
+if [ -z "$(getprop persist.vendor.pi2video.fps)" ]; then setprop persist.vendor.pi2video.fps 30; fi
+if [ -z "$(getprop persist.vendor.pi2video.bitrate)" ]; then setprop persist.vendor.pi2video.bitrate 4000; fi
+/system/bin/sh /system/bin/boxhome-video.sh
 settings put global device_provisioned 1
 settings put secure user_setup_complete 1
 settings put secure enabled_accessibility_services org.bench.boxhome/.NavigationService
@@ -84,7 +86,14 @@ if [ ! -e "$root/app_chrome/Default/Preferences" ]; then
 fi
 cmd package set-home-activity --user 0 org.bench.boxhome/.Home
 am start -n org.bench.boxhome/.Home
-printf 'gpu60-4mbps-home2.13\n' > "$marker"
+# Fresh setup only; later boots retain the owner's overlay/accessibility choices.
+if pm path com.android.car.dialer | grep -q '^package:'; then
+    cmd appops set com.android.car.dialer SYSTEM_ALERT_WINDOW allow
+    /system/bin/sh /vendor/bin/car-dialer-setup.sh
+fi
+settings put secure enabled_accessibility_services org.bench.boxhome/.NavigationService
+settings put secure accessibility_enabled 1
+printf 'home2.16-live-video-calling\n' > "$marker"
 # Retain compatibility with local identity guards for the now-promoted baseline.
 printf 'opencarplay-public\n' > /data/local/tmp/pi5-experimental-setup.complete
 sync

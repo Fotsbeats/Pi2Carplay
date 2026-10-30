@@ -11,6 +11,7 @@ mkdir -p "$out" /cache/tmp/suding
 exec >> "$out/wrapper.log" 2>&1
 rm -f "$out/session-established"
 export AIBOX_SESSION_FILE="$out/session-established"
+if [ "$(getprop persist.vendor.pi2call.enabled)" = 1 ]; then export AIBOX_CALLING=1; fi
 echo "Starting CarPlay bridge; automatic=$auto"
 setprop persist.vendor.aibox.handshake 0
 duration=150
@@ -36,6 +37,9 @@ cleanup() {
     [ -z "$probe_pid" ] || kill "$probe_pid" 2>/dev/null || true
     kill "$log_pid" ${watchdog_pid:+"$watchdog_pid"} 2>/dev/null || true
     [ -z "$capture_pid" ] || kill "$capture_pid" 2>/dev/null || true
+    setprop sys.pi2video.ceiling 0
+    setprop sys.pi2video.active_fps 0
+    setprop sys.pi2video.active_bitrate 0
     [ -z "$audio_pid" ] || kill "$audio_pid" 2>/dev/null || true
     ip -6 rule del pref 10500 oif eth1 lookup 2999 2>/dev/null || true
     ip -6 route del fe80::/64 dev eth1 table 2999 2>/dev/null || true
@@ -75,6 +79,9 @@ if [ -f /data/local/tmp/pi5-live-video ]; then
         case "$width $height $fps $x $y $content_width $content_height" in *[!0-9\ ]*) exit 10;; esac
         [ -n "$content_height" ] || exit 10
         wm size "${content_width}x${content_height}"
+        # Refresh Shell's cached PiP display layout after applying the negotiated size.
+        cmd overlay fabricate --target com.android.systemui --name BoxPip com.android.systemui:string/config_defaultPictureInPictureScreenEdgeInsets 0x03 86x16
+        cmd overlay enable --user 0 com.android.shell:BoxPip
         CLASSPATH=/data/local/tmp/pi5-display-capture.jar exec app_process / DisplayCapture \
             /data/local/tmp/pi5-video.fifo "$duration" \
             "$width" "$height" "$fps" "$x" "$y" "$content_width" "$content_height"

@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.view.Surface;
 import java.io.*;
 import java.nio.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /** Capture starts only after the bridge publishes the selected head-unit geometry. */
 public final class DisplayCapture {
@@ -14,6 +15,7 @@ public final class DisplayCapture {
     static native long openEncoder(String output,int width,int height,int fps) throws IOException;
     static native void encodeFrame(long encoder, ByteBuffer rgba, int timestamp, int force) throws IOException;
     static native void closeEncoder(long encoder);
+    static native void configureEncoder(long encoder,int fps,int bitrate) throws IOException;
     static native void encodeI420(long encoder, ByteBuffer yuv, int timestamp, int force) throws IOException;
     static native void referenceI420(ByteBuffer rgba,ByteBuffer yuv,int width,int height) throws IOException;
 
@@ -25,17 +27,31 @@ public final class DisplayCapture {
         Class<?> properties=Class.forName("android.os.SystemProperties");
         java.lang.reflect.Method getInt=properties.getMethod("getInt",String.class,int.class);
         java.lang.reflect.Method set=properties.getMethod("set",String.class,String.class);
+        set.invoke(null,"sys.pi2video.ceiling",String.valueOf(geometry.fps));
+        AtomicReference<VideoMode> mode=new AtomicReference<>(readMode(getInt,geometry.fps));
         Looper.prepareMainLooper();
         VirtualDisplay mirror = null;
         HandlerThread callbacks = new HandlerThread("capture-frames"); callbacks.start();
         SurfaceTexture texture = null; Surface mirrorSurface = null;
         GpuI420 gpu=null;
-        long encoder = openEncoder(args[0],geometry.width,geometry.height,geometry.fps);
+        long encoder = openEncoder(args[0],geometry.width,geometry.height,mode.get().fps);
         FramePipeline pipeline=null;
         try {
             gpu=new GpuI420(true,geometry);
             final long handle=encoder;
-            pipeline=new FramePipeline(geometry.packedBytes,(buffer,stamp,force)->encodeI420(handle,buffer,stamp,force));
+            final VideoMode[] applied={null};
+            pipeline=new FramePipeline(geometry.packedBytes,(buffer,stamp,force)->{
+                VideoMode selected=mode.get();boolean changed=!selected.same(applied[0]);
+                if(changed)configureEncoder(handle,selected.fps,selected.bitrate);
+                encodeI420(handle,buffer,stamp,force);
+                try {
+                    if(changed) {
+                        set.invoke(null,"sys.pi2video.active_fps",String.valueOf(selected.fps));
+                        set.invoke(null,"sys.pi2video.active_bitrate",String.valueOf(selected.bitrate));
+                        applied[0]=selected;
+                    }
+                }catch(Exception e){throw new IOException("Cannot report video mode",e);}
+            });
             int[] name = new int[1]; GLES20.glGenTextures(1,name,0);
             GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,name[0]);
             GLES20.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,GLES20.GL_TEXTURE_MIN_FILTER,GLES20.GL_LINEAR);
@@ -53,10 +69,14 @@ public final class DisplayCapture {
             int frames = 0, unique=0; long previousTexture=-1,firstTexture=0,lastTexture=0;
             while (System.nanoTime() < end) {
                 synchronized(lock) {
+                    VideoMode wanted=readMode(getInt,geometry.fps);
+                    if(!wanted.same(mode.get())){mode.set(wanted);next=0;available[0]=true;}
                     while ((!available[0] || System.nanoTime() < next) && System.nanoTime() < end) {
                         long wake = available[0] ? Math.min(end,next) : end;
                         lock.wait(Math.max(1,Math.min(100,(wake-System.nanoTime())/1000000)));
                         pipeline.check();
+                        VideoMode selected=readMode(getInt,geometry.fps);
+                        if(!selected.same(mode.get())){mode.set(selected);next=0;available[0]=true;}
                         if ((Integer)getInt.invoke(null,"sys.suding.force.key.frame",0)==1 && System.nanoTime()>=next) available[0]=true;
                     }
                     if (!available[0] || System.nanoTime() >= end) break;
@@ -68,7 +88,7 @@ public final class DisplayCapture {
                 if(textureStamp!=previousTexture){unique++;if(firstTexture==0)firstTexture=textureStamp;lastTexture=textureStamp;previousTexture=textureStamp;}
                 long captured = System.nanoTime();
                 if (next == 0) next = captured;
-                do { next += 1000000000L/geometry.fps; } while (next <= captured);
+                do { next += 1000000000L/mode.get().fps; } while (next <= captured);
                 if(frames<sourceStamps.length){sourceStamps[frames]=textureStamp;captureStamps[frames]=captured;}
                 gpu.render(name[0],matrix,i420);
                 int force=(Integer)getInt.invoke(null,"sys.suding.force.key.frame",0)==1?1:0;
@@ -94,7 +114,14 @@ public final class DisplayCapture {
                 if(gpu!=null)gpu.close();callbacks.quitSafely();
                 // A timed-out native writer still owns its codec until process exit.
                 if(pipeline==null||pipeline.isStopped())closeEncoder(encoder);
+                set.invoke(null,"sys.pi2video.ceiling","0");
+                set.invoke(null,"sys.pi2video.active_fps","0");
+                set.invoke(null,"sys.pi2video.active_bitrate","0");
             }
         }
+    }
+    private static VideoMode readMode(java.lang.reflect.Method getInt,int ceiling)throws Exception {
+        return new VideoMode((Integer)getInt.invoke(null,"persist.vendor.pi2video.fps",30),
+            (Integer)getInt.invoke(null,"persist.vendor.pi2video.bitrate",4000),ceiling);
     }
 }

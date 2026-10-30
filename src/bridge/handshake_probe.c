@@ -34,10 +34,10 @@ extern int snprintf(char *, unsigned, const char *, ...);
 #include "annexb.h"
 #include "touch.h"
 #include "display_geometry.h"
-#include "audio.h"
-#include "gps_forward.h"
 struct probe_time { long sec, nsec; };
 extern int clock_gettime(int, struct probe_time *);
+#include "audio.h"
+#include "gps_forward.h"
 
 static int negotiated_geometry(void *handle, struct display_geometry *g);
 static int geometry_equal(const struct display_geometry *a,const struct display_geometry *b) {

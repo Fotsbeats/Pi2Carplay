@@ -9,6 +9,7 @@ final class GpuI420 implements AutoCloseable {
     private EGLContext context=EGL14.EGL_NO_CONTEXT;
     private EGLSurface surface=EGL14.EGL_NO_SURFACE;
     private int program;
+    private int imageLocation,canvasLocation,areaLocation,widthLocation,matrixLocation,positionLocation;
     private final boolean external;
     private final FloatBuffer vertices=ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder()).asFloatBuffer();
     private static final String FRAGMENT=
@@ -60,6 +61,14 @@ final class GpuI420 implements AutoCloseable {
             GLES20.glDeleteShader(vs);GLES20.glDeleteShader(fs);
             GLES20.glGetProgramiv(program,GLES20.GL_LINK_STATUS,count,0);
             if(count[0]==0)throw new IOException(GLES20.glGetProgramInfoLog(program));
+            imageLocation=GLES20.glGetUniformLocation(program,"image");
+            canvasLocation=GLES20.glGetUniformLocation(program,"canvas");
+            areaLocation=GLES20.glGetUniformLocation(program,"area");
+            widthLocation=GLES20.glGetUniformLocation(program,"packedWidth");
+            matrixLocation=GLES20.glGetUniformLocation(program,"m");
+            positionLocation=GLES20.glGetAttribLocation(program,"p");
+            if(imageLocation<0||canvasLocation<0||areaLocation<0||widthLocation<0||matrixLocation<0||positionLocation<0)
+                throw new IOException("Packed YUV shader binding missing");
             vertices.put(new float[]{-1,-1,1,-1,-1,1,1,1}).position(0);
             GLES20.glDisable(GLES20.GL_DITHER);GLES20.glDisable(GLES20.GL_BLEND);
         }catch(IOException|RuntimeException e){close();throw e;}
@@ -69,13 +78,13 @@ final class GpuI420 implements AutoCloseable {
         GLES20.glViewport(0,0,geometry.packedWidth,geometry.packedHeight);GLES20.glUseProgram(program);
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLES20.glBindTexture(external?GLES11Ext.GL_TEXTURE_EXTERNAL_OES:GLES20.GL_TEXTURE_2D,texture);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(program,"image"),0);
-        GLES20.glUniform2f(GLES20.glGetUniformLocation(program,"canvas"),geometry.width,geometry.height);
-        GLES20.glUniform4f(GLES20.glGetUniformLocation(program,"area"),geometry.x,geometry.y,geometry.contentWidth,geometry.contentHeight);
-        GLES20.glUniform1f(GLES20.glGetUniformLocation(program,"packedWidth"),geometry.packedWidth);
-        GLES20.glUniformMatrix4fv(GLES20.glGetUniformLocation(program,"m"),1,false,matrix,0);
-        int pos=GLES20.glGetAttribLocation(program,"p");vertices.position(0);
-        GLES20.glEnableVertexAttribArray(pos);GLES20.glVertexAttribPointer(pos,2,GLES20.GL_FLOAT,false,0,vertices);
+        GLES20.glUniform1i(imageLocation,0);
+        GLES20.glUniform2f(canvasLocation,geometry.width,geometry.height);
+        GLES20.glUniform4f(areaLocation,geometry.x,geometry.y,geometry.contentWidth,geometry.contentHeight);
+        GLES20.glUniform1f(widthLocation,geometry.packedWidth);
+        GLES20.glUniformMatrix4fv(matrixLocation,1,false,matrix,0);
+        vertices.position(0);
+        GLES20.glEnableVertexAttribArray(positionLocation);GLES20.glVertexAttribPointer(positionLocation,2,GLES20.GL_FLOAT,false,0,vertices);
         GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP,0,4);
         i420.clear();GLES20.glReadPixels(0,0,geometry.packedWidth,geometry.packedHeight,GLES20.GL_RGBA,GLES20.GL_UNSIGNED_BYTE,i420);i420.clear();
         if(GLES20.glGetError()!=GLES20.GL_NO_ERROR)throw new IOException("Packed YUV render/readback failed");

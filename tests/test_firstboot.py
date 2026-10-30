@@ -4,6 +4,12 @@ import os,shutil,subprocess,tempfile,re,xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
 script=(ROOT/'src/android/opencarplay-firstboot.sh').read_text()
+assert 'setprop persist.vendor.pi2video.fps 30' in script
+assert 'setprop persist.vendor.pi2video.bitrate 4000' in script
+assert '/system/bin/sh /system/bin/boxhome-video.sh' in script
+assert script.index('[ ! -f "$marker" ] || exit 0') < script.index('SYSTEM_ALERT_WINDOW allow')
+assert script.rindex('enabled_accessibility_services') > script.index('done\n/system/bin/sh /system/bin/boxhome-landscape.sh')
+assert script.index('/system/bin/sh /vendor/bin/car-dialer-setup.sh') < script.index("printf 'home2.16-live-video-calling")
 check=(ROOT/'src/capture/EncoderSelfCheck.java').read_text()
 expected=re.search(r'args\[0\]\.equals\("([^"]+)"\)',check).group(1)
 assert 'EncoderSelfCheck '+expected in script,'First-boot self-check must use its allowed scratch path'

@@ -40,6 +40,7 @@ public final class Home extends Activity {
         @Override public AlertDialog show(){
             if(activeDialog!=null)activeDialog.dismiss();
             AlertDialog dialog=super.show();activeDialog=dialog;
+            HomeSettings.style(Home.this,dialog);
             dialog.setOnDismissListener(d->{if(activeDialog==d)activeDialog=null;});
             return dialog;
         }
@@ -147,14 +148,12 @@ public final class Home extends Activity {
         appSignature="";renderApps();
     }
     void showHomeSettings(){
-        new HomeDialog().setTitle("Home settings")
-            .setItems(new String[]{"Edit home apps","Wi-Fi","Bluetooth","Android settings","Home help"},(dialog,item)->{
-                if(item==0)editHomeApps();
-                else if(item==4)new HomeDialog().setTitle("Using Home")
+        HomeSettings.show(this);
+    }
+    void showHomeHelp(){
+        new HomeDialog().setTitle("Using Home")
                     .setMessage("Use Back, Home and Apps on the left rail. Double-tap or hold the Home circle for Android recent apps. Swipe a recent-app card up to close it. Use the split icon below Apps while an app is open, then choose another app from Recents. Drag the divider to resize; drag it to an edge to return to one app. Some apps do not support splitting. Swipe between Home and Apps, or tap the page indicators.\n\nHold an app to add, replace or remove it from Home. Choosing an app already on Home swaps its position. Removing a shortcut keeps the app installed.\n\nNew downloads appear in Apps and open in landscape. Picture-in-picture is allowed for YouTube.\n\nUse Wi-Fi to connect to the internet. Play Store may require your Google sign-in.")
                     .setPositiveButton("Got it",null).show();
-                else startActivity(new Intent(item==1?Settings.ACTION_WIFI_SETTINGS:item==2?Settings.ACTION_BLUETOOTH_SETTINGS:Settings.ACTION_SETTINGS));
-            }).setNegativeButton("Close",null).show();
     }
     void editHomeApps(){
         String[] rows=new String[HomeApps.SLOTS];
